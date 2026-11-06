@@ -1,0 +1,5 @@
+Textual DAN/STAN datasets selected from NVIDIA/garak.
+Portions Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+Apache-2.0; see accompanying license. No garak Python code executed or bundled.
+Original text retained in data; {generator.name} substituted at send time and a separate user-task wrapper appended.
+Source revision: 4b7761c2108446043012549cbe8f7c942cabb26d

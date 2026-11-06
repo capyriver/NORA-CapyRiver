@@ -1,0 +1,6 @@
+Node.js portable: https://nodejs.org/dist/v24.22.2/node-v24.22.2-win-x64.zip
+LICENSE: runtime/node/LICENSE
+OAuth transport bridge: https://www.npmjs.com/package/mcp-remote/v/0.15.2 (MIT)
+https://github.com/geelen/mcp-remote
+Cloudflare official endpoint docs: https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/
+Other component notices retained in licenses and runtime/node.

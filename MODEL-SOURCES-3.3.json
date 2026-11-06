@@ -1,0 +1,173 @@
+[
+  {
+    "id": "llama-1b",
+    "name": "Llama 3.2 · 1B · быстрый старт",
+    "repo": "bartowski/Llama-3.2-1B-Instruct-GGUF",
+    "revision": "067b946cf014b7c697f3654f621d577a3e3afd1c",
+    "file": "Llama-3.2-1B-Instruct-Q4_K_M.gguf",
+    "bytes": 807694464,
+    "sha256": "6f85a640a97cf2bf5b8e764087b1e83da0fdb51d7c9fab7d0fece9385611df83"
+  },
+  {
+    "id": "coder-05b",
+    "name": "Qwen2.5 Coder · 0.5B",
+    "repo": "Qwen/Qwen2.5-Coder-0.5B-Instruct-GGUF",
+    "revision": "ebb2015119c907b064c512bf053e945850b5875f",
+    "file": "qwen2.5-coder-0.5b-instruct-q4_k_m.gguf",
+    "bytes": 491400064,
+    "sha256": "1d9614638d18024d0fbb36575a15f1302a3adf044df10345688ec4f6e1c4ff32"
+  },
+  {
+    "id": "coder-15b",
+    "name": "Qwen2.5 Coder · 1.5B",
+    "repo": "Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF",
+    "revision": "f86cb2c1fa58255f8052cc32aeede1b7482d4361",
+    "file": "qwen2.5-coder-1.5b-instruct-q4_k_m.gguf",
+    "bytes": 1117320768,
+    "sha256": "cc324af070c2ecbfd324a30884d2f951a7ff756aba85cb811a6ec436933bb046"
+  },
+  {
+    "id": "llama-3b",
+    "name": "Llama 3.2 · 3B",
+    "repo": "bartowski/Llama-3.2-3B-Instruct-GGUF",
+    "revision": "5ab33fa94d1d04e903623ae72c95d1696f09f9e8",
+    "file": "Llama-3.2-3B-Instruct-Q4_K_M.gguf",
+    "bytes": 2019377696,
+    "sha256": "6c1a2b41161032677be168d354123594c0e6e67d2b9227c84f296ad037c728ff"
+  },
+  {
+    "id": "qwen3-06b",
+    "name": "Qwen3 · 0.6B",
+    "repo": "Qwen/Qwen3-0.6B-GGUF",
+    "revision": "23749fefcc72300e3a2ad315e1317431b06b590a",
+    "file": "Qwen3-0.6B-Q8_0.gguf",
+    "bytes": 639446688,
+    "sha256": "9465e63a22add5354d9bb4b99e90117043c7124007664907259bd16d043bb031"
+  },
+  {
+    "id": "qwen3-17b",
+    "name": "Qwen3 · 1.7B",
+    "repo": "Qwen/Qwen3-1.7B-GGUF",
+    "revision": "90862c4b9d2787eaed51d12237eafdfe7c5f6077",
+    "file": "Qwen3-1.7B-Q8_0.gguf",
+    "bytes": 1834426016,
+    "sha256": "061b54daade076b5d3362dac252678d17da8c68f07560be70818cace6590cb1a"
+  },
+  {
+    "id": "qwen25-05b",
+    "name": "Qwen2.5 · 0.5B",
+    "repo": "Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+    "revision": "9217f5db79a29953eb74d5343926648285ec7e67",
+    "file": "qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "bytes": 491400032,
+    "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db"
+  },
+  {
+    "id": "qwen25-15b",
+    "name": "Qwen2.5 · 1.5B",
+    "repo": "Qwen/Qwen2.5-1.5B-Instruct-GGUF",
+    "revision": "91cad51170dc346986eccefdc2dd33a9da36ead9",
+    "file": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+    "bytes": 1117320736,
+    "sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e"
+  },
+  {
+    "id": "qwen25-3b",
+    "name": "Qwen2.5 · 3B",
+    "repo": "Qwen/Qwen2.5-3B-Instruct-GGUF",
+    "revision": "7dabda4d13d513e3e842b20f0d435c732f172cbe",
+    "file": "qwen2.5-3b-instruct-q4_k_m.gguf",
+    "bytes": 2104932768,
+    "sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d"
+  },
+  {
+    "id": "phi35-mini",
+    "name": "Phi 3.5 · Mini 3.8B",
+    "repo": "bartowski/Phi-3.5-mini-instruct-GGUF",
+    "revision": "6d70da17e749a471ccb62ade694486011a75cda3",
+    "file": "Phi-3.5-mini-instruct-Q4_K_M.gguf",
+    "bytes": 2393232672,
+    "sha256": "e4165e3a71af97f1b4820da61079826d8752a2088e313af0c7d346796c38eff5"
+  },
+  {
+    "id": "gemma3-1b",
+    "name": "Gemma 3 · 1B",
+    "repo": "bartowski/google_gemma-3-1b-it-GGUF",
+    "revision": "116f76234503685a98f572982177b11d44ec8ff1",
+    "file": "google_gemma-3-1b-it-Q4_K_M.gguf",
+    "bytes": 806058496,
+    "sha256": "12bf0fff8815d5f73a3c9b586bd8fee8e7b248c935de70dec367679873d0f29d"
+  },
+  {
+    "id": "llama-8b",
+    "name": "Llama 3.1 · 8B",
+    "repo": "bartowski/Meta-Llama-3.1-8B-Instruct-GGUF",
+    "revision": "bf5b95e96dac0462e2a09145ec66cae9a3f12067",
+    "file": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+    "bytes": 4920739232,
+    "sha256": "7b064f5842bf9532c91456deda288a1b672397a54fa729aa665952863033557c"
+  },
+  {
+    "id": "qwen25-7b",
+    "name": "Qwen2.5 · 7B",
+    "repo": "bartowski/Qwen2.5-7B-Instruct-GGUF",
+    "revision": "8911e8a47f92bac19d6f5c64a2e2095bd2f7d031",
+    "file": "Qwen2.5-7B-Instruct-Q4_K_M.gguf",
+    "bytes": 4683074240,
+    "sha256": "65b8fcd92af6b4fefa935c625d1ac27ea29dcb6ee14589c55a8f115ceaaa1423"
+  },
+  {
+    "id": "mistral-7b",
+    "name": "Mistral · 7B Instruct v0.3",
+    "repo": "bartowski/Mistral-7B-Instruct-v0.3-GGUF",
+    "revision": "61fd4167fff3ab01ee1cfe0da183fa27a944db48",
+    "file": "Mistral-7B-Instruct-v0.3-Q4_K_M.gguf",
+    "bytes": 4372812000,
+    "sha256": "1270d22c0fbb3d092fb725d4d96c457b7b687a5f5a715abe1e818da303e562b6"
+  },
+  {
+    "id": "qwen3-8b",
+    "name": "Qwen3 · 8B",
+    "repo": "Qwen/Qwen3-8B-GGUF",
+    "revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+    "file": "Qwen3-8B-Q4_K_M.gguf?download=true",
+    "bytes": 5027783488,
+    "sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785"
+  },
+  {
+    "id": "qwen3-4b",
+    "name": "Qwen3 · 4B",
+    "repo": "Qwen/Qwen3-4B-GGUF",
+    "revision": "bc640142c66e1fdd12af0bd68f40445458f3869b",
+    "file": "Qwen3-4B-Q4_K_M.gguf?download=true",
+    "bytes": 2497280256,
+    "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5"
+  },
+  {
+    "id": "coder-3b",
+    "name": "Qwen2.5 Coder · 3B",
+    "repo": "Qwen/Qwen2.5-Coder-3B-Instruct-GGUF",
+    "revision": "f74adce6aa16316c625447af059dbebe4983757c",
+    "file": "qwen2.5-coder-3b-instruct-q4_k_m.gguf?download=true",
+    "bytes": 2104932800,
+    "sha256": "724fb256bec1ff062b2f65e4569e871ad2e95ab2a3989723d1769c54294730b7"
+  },
+  {
+    "id": "coder-7b",
+    "name": "Qwen2.5 Coder · 7B",
+    "repo": "Qwen/Qwen2.5-Coder-7B-Instruct-GGUF",
+    "revision": "13fb94bfda8c8cf22497dc57b78f391a9acb426a",
+    "file": "qwen2.5-coder-7b-instruct-q4_k_m.gguf?download=true",
+    "bytes": 4683073536,
+    "sha256": "509287f78cb4d4cf6b3843734733b914b2c158e43e22a7f4bf5e963800894d3c"
+  },
+  {
+    "id": "direct-4b",
+    "name": "Direct · Qwen3 4B",
+    "repo": "prithivMLmods/Qwen3-4B-2507-abliterated-GGUF",
+    "revision": "39bd5e36db343a5c5c14b64f01e3a14245fe882f",
+    "file": "Qwen3-4B-Instruct-2507-abliterated-GGUF/Qwen3-4B-Instruct-2507-abliterated.Q4_K_M.gguf?download=true",
+    "bytes": 2497280256,
+    "sha256": "528639d25ec2ebd81f68dbc508f4dbdb2f9fa314cddbcf0c3512e34281ecd7a8"
+  }
+]

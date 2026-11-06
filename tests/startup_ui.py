@@ -1,0 +1,61 @@
+"""Real HTML on its production virtual HTTPS origin; mocked native bridge, not native WebView2."""
+import ast, asyncio, copy, json, pathlib, shutil
+from playwright.async_api import async_playwright
+R=pathlib.Path(__file__).resolve().parent.parent
+source=(R/'src/ui.html').read_text();checks=[]
+t=ast.parse((R/'tests/ui_test.py').read_text())
+fixture=eval(compile(ast.Expression(next(n.value for n in t.body if isinstance(n,ast.Assign) and any(isinstance(x,ast.Name) and x.id=='fixture' for x in n.targets))),'fixture','eval'),{'__builtins__':{}})
+def ck(ok,name):
+ assert ok,name
+ checks.append(name)
+async def run():
+ async with async_playwright() as p:
+  b=await p.chromium.launch(executable_path=shutil.which('chromium'),headless=True,args=['--no-sandbox','--disable-gpu','--disable-gpu-compositing'])
+  async def page_for(html):
+   page=await b.new_page(viewport={'width':1440,'height':940})
+   await page.add_init_script("window.__sent=[];window.chrome=window.chrome||{};window.chrome.webview={postMessage(x){window.__sent.push(JSON.parse(x))},addEventListener(n,f){window.__receive=f}}")
+   await page.route('https://nora-ui.local/**',lambda route:route.fulfill(status=200,content_type='text/html; charset=utf-8',body=html))
+   await page.goto('https://nora-ui.local/index.html')
+   return page
+  page=await page_for(source)
+  ck(await page.evaluate('__sent.some(x=>x.action==="ready")'),'HTML parsed and native bridge ready sent on HTTPS origin')
+  ck(not await page.evaluate('__sent.some(x=>x.action==="uiReady")'),'no false readiness before host state')
+  await page.evaluate('(d)=>window.__receive({data:{type:"state",data:d}})',fixture)
+  await page.wait_for_function('__sent.some(x=>x.action==="uiReady")')
+  ck(await page.locator('.chat-item').count()==2,'saved chats rendered before native overlay dismissed')
+  ck(await page.locator('#thread pre').count()==1,'assistant code rendered on startup')
+  ck(await page.evaluate('__sent.filter(x=>x.action==="uiReady").length===1'),'paint ack after two animation frames')
+  await page.evaluate('(d)=>window.__receive({data:JSON.stringify({type:"state",data:d})})',fixture)
+  await page.wait_for_timeout(60)
+  ck(await page.evaluate('__sent.filter(x=>x.action==="uiReady").length===1'),'one readiness acknowledgement across state refreshes')
+  ck(not await page.evaluate('__sent.some(x=>x.action==="uiError")'),'no normal startup errors')
+  ck(await page.locator('#prompt').is_visible(),'composer visible')
+  ck(await page.evaluate('document.body.innerText.includes("3.8")'),'new version badge')
+  bad=await page_for(source)
+  await bad.evaluate('setTimeout(()=>window.__receive({data:{type:"state",data:{settings:null}}}),0)')
+  await bad.wait_for_function('__sent.some(x=>x.action==="uiError")')
+  ck(not await bad.evaluate('__sent.some(x=>x.action==="uiReady")'),'bad state never hides native diagnostics')
+  ck(await bad.evaluate('__sent.some(x=>x.action==="uiError"&&x.data.line!==undefined)'),'runtime error reaches native bridge')
+  syntax=await page_for(source.replace("let browserState=null;","let browserState=;"))
+  await syntax.wait_for_function('__sent.some(x=>x.action==="uiError")')
+  ck(not await syntax.evaluate('__sent.some(x=>x.action==="ready")'),'parse failure caught by independent early script')
+  rejection=await page_for(source)
+  await rejection.evaluate("setTimeout(()=>Promise.reject(new Error('test')),0)")
+  await rejection.wait_for_function('__sent.some(x=>x.action==="uiError")')
+  ck(await rejection.evaluate('__sent.some(x=>x.data.message==="Unhandled promise rejection")'),'promise rejection reaches native bridge without serializing private data')
+  native=(R/'src/StartupView.cs').read_text();program=(R/'src/Program.cs').read_text()
+  ck('--disable-gpu --disable-gpu-compositing' in native,'software rendering flags isolated to UI')
+  ck('"webview-ui-3.2"' in native,'fresh UI profile separate from old UI and browser cookies')
+  ck('SetVirtualHostNameToFolderMapping' in native and 'HostResourceAccessKind.Deny' in native,'local packaged resource origin, deny cross-origin access')
+  ck('e.Source!=uiUrl' in native and 'if(e.Uri!=uiUrl)' in native,'host messages and navigation restricted to packaged UI')
+  ck('ProcessFailed+=' in native and 'NavigationCompleted+=' in native,'native renderer and navigation failure handlers')
+  ck('WaitAsync(TimeSpan.FromSeconds(25))' in native and 'WatchStartup(attempt)' in native,'bounded WebView initialization and ready watchdog')
+  ck('startupPanel.Visible=false' in native and 'case "uiReady":CompleteStartup()' in program,'native overlay waits for HTML render acknowledgement')
+  ck('attempt!=startupAttempt' in native and 'previous.Dispose()' in native,'stale retry callbacks guarded and previous UI disposed')
+  ck('File.Delete' not in native and 'Directory.Delete' not in native,'startup recovery deletes no user data')
+  ck('StartupLog.Write("Application startup",e)' in program,'constructor failure cannot silently leave a black window')
+  ck('Копировать диагностику' in native and 'Открыть папку журнала' in native,'actionable native diagnostics and retry controls')
+  await page.close();await bad.close();await syntax.close();await rejection.close();await b.close()
+ (R/'verification-3.8/startup-ui.json').write_text(json.dumps({'passed':len(checks),'checks':checks,'limitation':'Chromium plus mocked bridge; Windows WebView2 unavailable'},ensure_ascii=False,indent=2))
+ print(len(checks),'startup UI and wiring checks passed')
+asyncio.run(run())

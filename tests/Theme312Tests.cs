@@ -1,0 +1,5 @@
+using System.Text.Json;using LocalChat;
+int count=0;void Check(bool ok,string name){if(!ok)throw new Exception(name);count++;Console.WriteLine("PASS "+name);}
+var old=JsonSerializer.Deserialize<Settings>("{\"modelId\":\"local-model\",\"temperature\":0.5}",Disk.Json)!;Check(old.InterfaceTheme=="system","old settings default to system theme");Check(old.ModelId=="local-model","old model settings remain readable");
+foreach(var theme in new[]{"system","light","dark"}){old.InterfaceTheme=theme;var json=JsonSerializer.Serialize(old,Disk.Json);var round=JsonSerializer.Deserialize<Settings>(json,Disk.Json)!;Check(round.InterfaceTheme==theme,"theme round trip "+theme);Check(round.ModelId==old.ModelId&&round.Temperature==old.Temperature,"theme does not modify inference settings "+theme);}
+var root=args.Length>0?args[0]:".";var src=File.ReadAllText(Path.Combine(root,"src/Program.cs"));Check(src.Contains("next.InterfaceTheme=settings.InterfaceTheme;"),"model-settings save preserves interface preference");Check(src.Contains("""theme is not ("system" or "light" or "dark")"""),"native theme action validates allowlist");Console.WriteLine($"{count} theme checks passed");

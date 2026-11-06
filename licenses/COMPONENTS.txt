@@ -1,0 +1,15 @@
+Third-party components bundled with NORA 2.4
+.NET / Windows Desktop Runtime 8.0.33 — MIT; see included licenses and notices.
+Microsoft.Web.WebView2 SDK 1.0.2903.40 — see WEBVIEW2-SDK-LICENSE.txt.
+HtmlAgilityPack 1.11.71 — MIT; copyright ZZZ Projects / Simon Mourier et al.
+PdfPig 0.1.9 — Apache-2.0; see PDFPIG-LICENSE.txt (including upstream notices).
+
+WebView2 Runtime is NOT included. Python, AirLLM, PyTorch, CUDA, llama.cpp,
+LM Studio and model weights are NOT included; their own licenses apply.
+GitHub profiles are downloaded only by explicit user action. Their licenses
+and source instructions apply; they are not bundled model weights.
+NORA source is supplied for inspection and modification. No warranty is made
+about fitness for a particular purpose, model output or investment results.
+
+Optional Qwen3-8B GGUF: official Qwen, Apache-2.0 (downloaded separately).
+Optional llama.cpp b11669: MIT (downloaded separately).

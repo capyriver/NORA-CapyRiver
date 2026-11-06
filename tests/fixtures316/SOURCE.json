@@ -1,0 +1,8 @@
+{
+  "source": "NORA-3.15-desktop-full.zip",
+  "purpose": "Unmodified legacy browser scripts for before/after reproduction; never loaded by application",
+  "scripts": {
+    "browser-read315.js": "5fa47fb4e70d9ca4d9d918b6e1de51c61e723530617bedbe1a09dbae9482b728",
+    "browser-dom315.js": "8c2411e91992c7cbcd34f64882820813f17af7c0b1b5e4b79fe3080123626e56"
+  }
+}

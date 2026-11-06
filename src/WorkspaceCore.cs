@@ -1,0 +1,36 @@
+using System.Text.Json;
+using System.Text.RegularExpressions;
+namespace LocalChat;
+class WorkStep {public DateTime At {get;set;}=DateTime.UtcNow;public string Text {get;set;}="";}
+class OutputArtifact {public string Id {get;set;}=Guid.NewGuid().ToString("N");public string Name {get;set;}="";public string Kind {get;set;}="file";public string RelativePath {get;set;}="";public long Bytes {get;set;} public string DataUrl {get;set;}="";}
+record ToolCall(string tool,string query="",string url="",int index=0,string artifactId="",string server="",string name="",JsonElement arguments=default,string text="");
+static class WorkspaceCore {
+ public static readonly HashSet<string> Tools=new(){"connector_request","code_check","browser_back","browser_forward","browser_reload","browser_tabs","browser_tab","browser_snapshot","browser_click","browser_type","browser_scroll","browser_look","browser_search","browser_open","browser_read","browser_link","browser_capture","screen_capture","make_zip","copy_to_output","chat_memory_search","create_file","mcp_search_tools","mcp_list_tools","mcp_describe_tool","mcp_call"};
+ public static ToolCall? ParseTool(string answer,IEnumerable<(string Server,string Name)>? remoteTools=null){var s=answer.Trim();if(s.StartsWith("<tool_call>")&&s.EndsWith("</tool_call>"))s=s[11..^12].Trim();if(s.StartsWith("```")&&s.EndsWith("```")){int nl=s.IndexOf('\n');if(nl>=0&&s[..nl].Trim() is "```" or "```json")s=s[(nl+1)..^3].Trim();}if(!s.StartsWith('{')||s.Length>24000)return null;try{if(remoteTools!=null)s=ToolProtocol.ResolveRemote(s,remoteTools);s=ToolProtocol.Normalize(s);var t=JsonSerializer.Deserialize<ToolCall>(s,Disk.Json);if(t==null||string.IsNullOrEmpty(t.tool))return null;if(!Tools.Contains(t.tool))throw new InvalidOperationException("Неизвестный инструмент: "+t.tool);if(t.server==null||t.name==null||t.text==null||t.server.Length>60||t.name.Length>180||t.text.Length>20000)throw new InvalidOperationException("Некорректные параметры инструмента");if(t.query==null||t.url==null||t.artifactId==null||t.query.Length>1000||t.url.Length>3000||t.artifactId.Length>100)throw new InvalidOperationException("Слишком длинные параметры инструмента.");return t;}catch(JsonException){return null;}}
+ public static bool NeedsApproval(int policy,string tool,bool screenAllowed){if(policy<0||policy>2)throw new ArgumentException("Некорректный режим доступа");if(policy<2&&(tool.StartsWith("mcp_")||tool is "browser_click" or "browser_type" or "browser_look" or "code_check"))return true;if(tool=="screen_capture"&&!screenAllowed)return true;return policy==0||policy==1&&tool=="copy_to_output";}
+ public static string ArtifactPath(string root,string relative){string full=Path.GetFullPath(Path.Combine(root,relative));if(!full.StartsWith(Path.GetFullPath(root)+Path.DirectorySeparatorChar,StringComparison.OrdinalIgnoreCase)||Path.IsPathRooted(relative)||relative.Split('/', '\\').Any(s=>s is ".." or "."))throw new Exception("Путь файла вне рабочей области.");return full;}
+ public static string CopyNew(string source,string folder,string name){if(!Directory.Exists(folder))throw new Exception("Папка назначения недоступна. Подключи флешку и выбери папку заново.");for(var d=new DirectoryInfo(Path.GetFullPath(folder));d!=null;d=d.Parent)if((d.Attributes&FileAttributes.ReparsePoint)!=0)throw new Exception("Папки-ссылки не разрешены для автоматической записи.");if(name.Contains('\\')||name.Contains('/')||name.Contains(':')||Path.GetFileName(name)!=name||name.IndexOfAny(Path.GetInvalidFileNameChars())>=0)throw new Exception("Некорректное имя файла.");string target=Path.Combine(folder,Path.GetFileNameWithoutExtension(name)+"-"+Guid.NewGuid().ToString("N")[..8]+Path.GetExtension(name));using var input=File.OpenRead(source);using var output=new FileStream(target,FileMode.CreateNew,FileAccess.Write,FileShare.None);input.CopyTo(output);return target;}
+ public static ToolCall? Quick(string question){string q=question.Trim();var open=Regex.Match(q,@"^(?:ии\s+)?открой\s+(?:мне\s+)?(?:браузер[,—:]?(?:\s+(.+))?|(?:в\s+браузере\s+)?(телеграм(?:\s+веб)?|telegram|тг|ютуб|youtube|github|гитхаб))[.!]?$",RegexOptions.IgnoreCase);if(open.Success){string target=(open.Groups[2].Value+open.Groups[1].Value).Trim(' ','.','!').ToLowerInvariant();if(Regex.IsMatch(target,@"^(тг|телеграм|telegram)(\s|$)|(?:подключ|войду|войти|зайду|авториз|для).*(?:\bтг\b|телеграм|telegram)"))target="тг";return target switch {"телеграм" or "телеграм веб" or "telegram" or "тг"=>new("browser_open",url:"https://web.telegram.org/k/"),"ютуб" or "youtube"=>new("browser_open",url:"https://www.youtube.com/"),"github" or "гитхаб"=>new("browser_open",url:"https://github.com/"),""=>new("browser_open",url:"about:blank"),_=>target.StartsWith("https://")?new("browser_open",url:target):new("browser_search",target)};}if(Regex.IsMatch(q,@"^(сделай (скриншот|снимок экрана)|сфоткай экран|снимок экрана)[.!]?$",RegexOptions.IgnoreCase))return new("screen_capture");if(Regex.IsMatch(q,@"^(дай|создай|сделай|упакуй)( ответ| это| код)?( в)? zip[.!]?$",RegexOptions.IgnoreCase))return new("make_zip");if(Regex.IsMatch(q,@"^(загрузи|сохрани|скопируй)( это| файл| zip)? на флешку[.!]?$",RegexOptions.IgnoreCase))return new("copy_to_output");var m=Regex.Match(q,@"^(погугли|найди в интернете|найди в гугле)\s+(.+)$",RegexOptions.IgnoreCase);if(m.Success)return new("browser_search",m.Groups[2].Value);m=Regex.Match(q,@"^открой\s+(https://\S+)$",RegexOptions.IgnoreCase);return m.Success?new("browser_open",url:m.Groups[1].Value):null;}
+}
+
+// Include every selected file or fail visibly. Never silently return the first ten.
+static class WorkspaceArchive {
+ public const int MaxArchiveBytes=25*1024*1024;
+ public static byte[] Create(IEnumerable<(string Name,Func<Stream> Open)> entries){
+  using var bytes=new BoundedZipStream();int count=0;long unpacked=0;var names=new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+  using(var zip=new System.IO.Compression.ZipArchive(bytes,System.IO.Compression.ZipArchiveMode.Create,true)){
+   foreach(var item in entries){if(++count>200)throw new InvalidDataException("ZIP: больше 200 файлов. Раздели проект; неполный архив не создан.");
+    if(string.IsNullOrWhiteSpace(item.Name)||item.Name.Contains(':')||item.Name.StartsWith('/')||item.Name.StartsWith('\\')||item.Name.Split('/','\\').Any(x=>x is ".." or ".")||!names.Add(item.Name))throw new InvalidDataException("ZIP: некорректное или повторное имя файла");
+    using var input=item.Open();using var output=zip.CreateEntry(item.Name).Open();byte[] buffer=new byte[65536];int n;
+    while((n=input.Read(buffer))>0){unpacked+=n;if(unpacked>100L*1024*1024)throw new InvalidDataException("ZIP: исходные файлы больше 100 МБ. Неполный архив не создан.");output.Write(buffer,0,n);}
+   }
+  }
+  if(count==0)throw new InvalidDataException("ZIP: нет файлов для архива");return bytes.ToArray();
+ }
+ sealed class BoundedZipStream:MemoryStream {
+  void Check(int n){if(Position+n>MaxArchiveBytes)throw new InvalidDataException("ZIP превышает 25 МБ. Неполный архив не создан.");}
+  public override void Write(byte[] b,int o,int n){Check(n);base.Write(b,o,n);}
+  public override void Write(ReadOnlySpan<byte> b){Check(b.Length);base.Write(b);}
+  public override void WriteByte(byte b){Check(1);base.WriteByte(b);}
+ }
+}

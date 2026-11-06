@@ -1,0 +1,171 @@
+{
+  "bridge": {
+    "name": "mcp-remote",
+    "version": "0.15.2",
+    "license": "MIT",
+    "repository": {
+      "url": "git+https://github.com/punkpeye/mcp-remote.git",
+      "type": "git"
+    },
+    "engines": null,
+    "dist": {
+      "shasum": "9c8edd741758b1e43d6cac13fffa8f087699c1a6",
+      "tarball": "https://registry.npmjs.org/mcp-remote/-/mcp-remote-0.15.2.tgz",
+      "fileCount": 10,
+      "integrity": "sha512-3PrXMgjJew6xbZH21D7AbtOoHwhvjWt1IY6wepHjKTZLPSkTPifdMVBFuoxsuF6WK6nUlZIgpSj5o5NscJ+XXw==",
+      "signatures": [
+        {
+          "sig": "MEQCIEaW6p+QB7vPy/7nxYaoyQ2rfMtEEZgFHlu0OR3cpKImAiAqz6CEbenbVoMgwl8DPi1d2hP8Wo1UGt17RxvDBkZImQ==",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "sig": "MEUCIQCzayjmjbVveKqCk74NeBHQ4FBcX+VYPveCL1pP1m21TgIgbAyOKq0fKRoJnClsHUq4LfpomuLWL+eXiNQ0qnC/GoA=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/mcp-remote@0.15.2",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 2103824
+    }
+  },
+  "connectors": [
+    {
+      "id": "github",
+      "name": "GitHub",
+      "description": "Репозитории, файлы, issues, pull requests, Actions и другие доступные toolsets.",
+      "source": "https://github.com/github/github-mcp-server",
+      "package": "",
+      "version": "",
+      "requirement": "Личный GitHub PAT с нужными правами. По умолчанию сервер только для чтения; запись включается отдельно.",
+      "url": "https://api.githubcopilot.com/mcp/x/all/readonly",
+      "auth": "bearer",
+      "tokenEnv": "GITHUB_PERSONAL_ACCESS_TOKEN"
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "description": "Страницы, базы и поиск в разрешённом рабочем пространстве.",
+      "source": "https://developers.notion.com/guides/mcp/get-started-with-mcp",
+      "package": "",
+      "version": "",
+      "requirement": "Вход в Notion и согласие на доступ в браузере на твоём ПК. Доступ зависит от workspace policy.",
+      "url": "https://mcp.notion.com/mcp",
+      "auth": "oauth"
+    },
+    {
+      "id": "linear",
+      "name": "Linear",
+      "description": "Задачи, проекты, комментарии и рабочие процессы команды.",
+      "source": "https://linear.app/docs/mcp",
+      "package": "",
+      "version": "",
+      "requirement": "OAuth в браузере на твоём ПК; права аккаунта Linear.",
+      "url": "https://mcp.linear.app/mcp",
+      "auth": "oauth"
+    },
+    {
+      "id": "atlassian",
+      "name": "Jira + Confluence",
+      "description": "Задачи Jira, проекты и страницы Confluence через Atlassian Rovo MCP.",
+      "source": "https://support.atlassian.com/atlassian-rovo-mcp-server/",
+      "package": "",
+      "version": "",
+      "requirement": "Atlassian OAuth. Администратор может ограничить подключения и доступные инструменты.",
+      "url": "https://mcp.atlassian.com/v2/mcp",
+      "auth": "oauth"
+    },
+    {
+      "id": "sentry",
+      "name": "Sentry",
+      "description": "Ошибки приложений, события и диагностика проектов.",
+      "source": "https://docs.sentry.io/product/sentry-mcp/",
+      "package": "",
+      "version": "",
+      "requirement": "OAuth Sentry; нужны доступы к организации и проектам.",
+      "url": "https://mcp.sentry.dev/mcp",
+      "auth": "oauth"
+    },
+    {
+      "id": "huggingface",
+      "name": "Hugging Face",
+      "description": "Поиск моделей, datasets, статей и доступных AI-приложений.",
+      "source": "https://github.com/huggingface/hf-mcp-server",
+      "package": "",
+      "version": "",
+      "requirement": "OAuth/токен Hugging Face по требованиям сервиса. Внешние приложения могут иметь отдельные лимиты.",
+      "url": "https://huggingface.co/mcp",
+      "auth": "oauth"
+    },
+    {
+      "id": "deepwiki",
+      "name": "DeepWiki",
+      "description": "Документация и вопросы о публичных GitHub-репозиториях.",
+      "source": "https://docs.devin.ai/work-with-devin/deepwiki-mcp",
+      "package": "",
+      "version": "",
+      "requirement": "Публичный удалённый сервер, без ключа. Запросы передаются DeepWiki.",
+      "url": "https://mcp.deepwiki.com/mcp"
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft Learn",
+      "description": "Поиск и чтение официальной документации Microsoft.",
+      "source": "https://learn.microsoft.com/en-us/training/support/mcp",
+      "package": "",
+      "version": "",
+      "requirement": "Публичный удалённый сервер, без ключа. Действуют условия Microsoft Learn.",
+      "url": "https://learn.microsoft.com/api/mcp"
+    },
+    {
+      "id": "cloudflare-docs",
+      "name": "Cloudflare Docs",
+      "description": "Поиск по документации Cloudflare.",
+      "source": "https://github.com/cloudflare/mcp-server-cloudflare",
+      "package": "",
+      "version": "",
+      "requirement": "Публичный сервер документации. Это не управление аккаунтом Cloudflare.",
+      "url": "https://docs.mcp.cloudflare.com/mcp"
+    },
+    {
+      "id": "context7",
+      "name": "Context7",
+      "description": "Актуальная документация библиотек для кода.",
+      "source": "https://github.com/upstash/context7",
+      "package": "@upstash/context7-mcp",
+      "version": "4.4.4",
+      "requirement": "Node.js 24+. Интернет; у сервиса могут быть лимиты."
+    },
+    {
+      "id": "memory",
+      "name": "Память · граф знаний",
+      "description": "Сущности, наблюдения и связи.",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+      "package": "@modelcontextprotocol/server-memory",
+      "version": "2.0.1",
+      "requirement": "Node.js 24+. Локальная база отдельно от истории чата."
+    },
+    {
+      "id": "filesystem",
+      "name": "Файлы · рабочая папка",
+      "description": "Чтение, поиск и запись в выбранной папке.",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+      "package": "@modelcontextprotocol/server-filesystem",
+      "version": "2.1.0",
+      "requirement": "Node.js 24+. Выбери отдельную рабочую папку, не весь диск."
+    },
+    {
+      "id": "playwright",
+      "name": "Playwright · браузер",
+      "description": "Навигация, формы, клики и тестирование в отдельном браузере.",
+      "source": "https://github.com/microsoft/playwright-mcp",
+      "package": "@playwright/mcp",
+      "version": "0.0.83",
+      "requirement": "Node.js 24+ и Google Chrome. Не управляет встроенным WebView NORA."
+    }
+  ],
+  "notice": "Endpoints documented by publishers; account authentication not tested. Tools are discovered dynamically, not bundled as active functions."
+}

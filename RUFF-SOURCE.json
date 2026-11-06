@@ -1,0 +1,9 @@
+{
+  "name": "ruff",
+  "version": "0.17.3",
+  "repository": "https://github.com/astral-sh/ruff",
+  "stars": 50343,
+  "pypiUrl": "https://files.pythonhosted.org/packages/d0/a0/f08c1631bfd81faa6a90eaf70c37c786c11bed2046302b56bb506c25e1a0/ruff-0.17.3-py3-none-win_amd64.whl",
+  "wheelSha256": "56b8ffb3f3b3cbccb8b76b71b38261b7ed982ef5d20f5b447b1b61a7f4949b24",
+  "exeSha256": "1447a6a20b86e5d40bfebb0c2e56f8b929e2c30b0131f9ab1b5afbc826f5a11b"
+}

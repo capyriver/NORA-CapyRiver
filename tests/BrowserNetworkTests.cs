@@ -1,0 +1,21 @@
+using LocalChat;
+using System.Net;
+int passed=0;void Check(bool value,string name){if(!value)throw new Exception(name);passed++;Console.WriteLine("PASS "+name);}
+async Task Reject(Func<Task> run,string name){try{await run();}catch{Check(true,name);return;}throw new Exception("Not rejected: "+name);}
+IPAddress[] ips(params string[] x)=>x.Select(IPAddress.Parse).ToArray();
+int asked=0,resolved=0;
+var regular=new BrowserNetworkPolicy(host=>{resolved++;return Task.FromResult(ips("142.250.74.68","2a00:1450:4001:82f::2004"));},(host,message)=>{asked++;return Task.FromResult(false);});
+await regular.Validate("https://www.google.com/");await regular.Validate("https://www.google.com/search?q=test");Check(asked==0&&resolved==1,"normal public DNS uses cached approval without dialog");
+asked=0;var proxy=new BrowserNetworkPolicy(host=>Task.FromResult(ips("198.18.0.5")),(host,message)=>{asked++;Check(host=="web.telegram.org"&&message.Contains("198.18."),"proxy dialog identifies requested host and DNS diagnostic");return Task.FromResult(true);});
+await proxy.Validate("https://web.telegram.org/k/");Check(proxy.SystemNetworkApproved&&asked==1,"fake-IP tunnel works only after explicit session approval");
+await proxy.Validate("https://www.google.com/");await proxy.Validate("wss://web.telegram.org/apiws");Check(asked==1,"subresources do not cause repeated proxy dialogs");
+foreach(string url in new[]{"https://127.0.0.1/","https://10.0.0.1/","https://192.168.0.1/","https://198.18.0.1/","https://[::1]/","https://[fe80::1]/","https://localhost/","https://router.local/","https://router.lan/","https://service.internal/","https://localhost./","https://foo.localhost/","file:///C:/Windows/","http://example.com/","javascript:alert(1)","https://user:pass@example.com/","https://example.com:8080/"})await Reject(()=>proxy.Validate(url),"direct private/name/scheme remains blocked after consent: "+url);
+Check(asked==1,"blocked local inputs never ask to bypass the block");
+asked=0;var denied=new BrowserNetworkPolicy(host=>Task.FromResult(ips("198.18.0.10")),(host,message)=>{asked++;return Task.FromResult(false);});await Reject(()=>denied.Validate("https://example.com/"),"private DNS does not silently disable checks");await Reject(()=>denied.Validate("https://example.com/"),"declined consent has prompt cooldown");Check(!denied.SystemNetworkApproved&&asked==1,"refusal leaves strict mode on");
+asked=0;var missing=new BrowserNetworkPolicy(host=>Task.FromException<IPAddress[]>(new System.Net.Sockets.SocketException()),(host,message)=>{asked++;return Task.FromResult(true);});await missing.Validate("https://example.com/");Check(asked==1&&missing.SystemNetworkApproved,"system DNS failure can defer to browser/proxy DNS with consent");
+asked=0;var concurrent=new BrowserNetworkPolicy(async host=>{await Task.Delay(10);return ips("198.18.0.20");},async(host,message)=>{asked++;await Task.Delay(20);return true;});await Task.WhenAll(Enumerable.Range(0,10).Select(i=>concurrent.Validate("https://cdn"+i+".example.com/a.js")));Check(asked==1,"concurrent resource requests serialize one compatibility prompt");
+var fresh=new BrowserNetworkPolicy(host=>Task.FromResult(ips("198.18.0.30")),(host,message)=>Task.FromResult(false));Check(!fresh.SystemNetworkApproved,"compatibility approval is not persisted into a new session");
+int mixedPrompt=0;var mixed=new BrowserNetworkPolicy(host=>Task.FromResult(ips("142.250.74.68","192.168.0.1")),(host,message)=>{mixedPrompt++;return Task.FromResult(false);});await Reject(()=>mixed.Validate("https://example.com/"),"mixed DNS addresses still require approval");Check(mixedPrompt==1,"mixed public/private DNS is not silently trusted");
+string notice=BrowserNetworkPolicy.Notice("example.com","198.18.0.1");Check(notice.Contains("внутреннюю сеть")&&notice.Contains("не сохраняется")&&notice.Contains("сертификатов HTTPS не отключается"),"consent explains scope, network risk, session lifetime and TLS retention");
+try{await WebReader.Read("https://127.0.0.1/",CancellationToken.None);throw new Exception("Background private fetch unexpectedly succeeded");}catch(Exception e){Check(e.ToString().Contains("Локальные и служебные"),"background HTTP reader still rejects private IP independently of browser mode");}
+Console.WriteLine($"{passed} browser network checks passed");

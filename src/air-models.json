@@ -1,0 +1,323 @@
+[
+  {
+    "id": "air-qwen3-8b",
+    "name": "Qwen3 · 8B",
+    "repo": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "thinking": true,
+    "files": [
+      {
+        "name": "config.json",
+        "bytes": 728,
+        "sha256": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30"
+      },
+      {
+        "name": "generation_config.json",
+        "bytes": 239,
+        "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2"
+      },
+      {
+        "name": "merges.txt",
+        "bytes": 1671853,
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+      },
+      {
+        "name": "model-00001-of-00005.safetensors",
+        "bytes": 3996250744,
+        "sha256": "31d6a825ae35f11fb85b195b4c42c146c051e446433125a215336abdf95cbf5f"
+      },
+      {
+        "name": "model-00002-of-00005.safetensors",
+        "bytes": 3993160032,
+        "sha256": "5991236cea6fe21f3d43cab0f0e84448734fbbe0789816202989f2ddc9d18282"
+      },
+      {
+        "name": "model-00003-of-00005.safetensors",
+        "bytes": 3959604768,
+        "sha256": "c5185c4794be2d8a9784d5753c9922db38df478ce11f9ed0b415b7304d896836"
+      },
+      {
+        "name": "model-00004-of-00005.safetensors",
+        "bytes": 3187841392,
+        "sha256": "b5ee7de71fbf17db3d5704e0c8f2bc7d005ca9e1d7ca2aeb19827b0cfcaa917a"
+      },
+      {
+        "name": "model-00005-of-00005.safetensors",
+        "bytes": 1244659840,
+        "sha256": "20c2d6366ab85c90786ccdd829cd2b9e7d30ef3b2ebbb998280e7e4014b542ff"
+      },
+      {
+        "name": "model.safetensors.index.json",
+        "bytes": 32878,
+        "sha256": "f9fdbcb91c23971c13ec5d5f2573d2349e8f61f2f049371ec699281748fdb1bc"
+      },
+      {
+        "name": "tokenizer.json",
+        "bytes": 11422654,
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "bytes": 9732,
+        "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101"
+      },
+      {
+        "name": "vocab.json",
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    ]
+  },
+  {
+    "id": "air-coder-7b",
+    "name": "Qwen2.5 Coder · 7B",
+    "repo": "Qwen/Qwen2.5-Coder-7B-Instruct",
+    "revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+    "thinking": false,
+    "files": [
+      {
+        "name": "config.json",
+        "bytes": 663,
+        "sha256": "c0242402ad6a13b331ea320feea8c7e3776ffb7a4eff0757b9cd667e116d9a28"
+      },
+      {
+        "name": "generation_config.json",
+        "bytes": 242,
+        "sha256": "1a628a5775bc69cde01c6749a531150ca4d3189652c618a174f7077923acf3b1"
+      },
+      {
+        "name": "merges.txt",
+        "bytes": 1671839,
+        "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+      },
+      {
+        "name": "model-00001-of-00004.safetensors",
+        "bytes": 4877660776,
+        "sha256": "0b6f069918b07c064cbba8ae4f00f529aa9bbf84b7cdfcb7fc2694a40f6aa8ef"
+      },
+      {
+        "name": "model-00002-of-00004.safetensors",
+        "bytes": 4932751008,
+        "sha256": "c3d46733e7aa054ea7b063fbccd0a5a08446e7bd1814bef26936c5aa1331da62"
+      },
+      {
+        "name": "model-00003-of-00004.safetensors",
+        "bytes": 4330865200,
+        "sha256": "9fe45dacee087385b3d2d6dd27a7413a8a56d95f145772facc148fa86fc73446"
+      },
+      {
+        "name": "model-00004-of-00004.safetensors",
+        "bytes": 1089994880,
+        "sha256": "5aa6e5cbe642377fd441fb4e60e83cca96b2bcd9820e245b9ea06d94653f17f2"
+      },
+      {
+        "name": "model.safetensors.index.json",
+        "bytes": 27752,
+        "sha256": "998a078123ffc97763690de7f2a677eb89168af5eaf8a5e12e6bc24d18e25bdb"
+      },
+      {
+        "name": "tokenizer.json",
+        "bytes": 7031645,
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "bytes": 7305,
+        "sha256": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4"
+      },
+      {
+        "name": "vocab.json",
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    ]
+  },
+  {
+    "id": "air-coder-14b",
+    "name": "Qwen2.5 Coder · 14B",
+    "repo": "Qwen/Qwen2.5-Coder-14B-Instruct",
+    "revision": "aedcc2d42b622764e023cf882b6652e646b95671",
+    "thinking": false,
+    "files": [
+      {
+        "name": "config.json",
+        "bytes": 663,
+        "sha256": "9051fe83840dcd3a0f7e9f5b3372fc3927419eb56983273eac2dc635a5da7eae"
+      },
+      {
+        "name": "generation_config.json",
+        "bytes": 243,
+        "sha256": "fdaccbcb02f3e1e7914ccb0f69ebe899071ffd27cf825166d823163e156870f2"
+      },
+      {
+        "name": "merges.txt",
+        "bytes": 1671839,
+        "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+      },
+      {
+        "name": "model-00001-of-00006.safetensors",
+        "bytes": 4986211280,
+        "sha256": "b14a60aa35c07e58da61cbe6c8b2819e60a043dd98001f14736045c6062e79a0"
+      },
+      {
+        "name": "model-00002-of-00006.safetensors",
+        "bytes": 4954847344,
+        "sha256": "03b8de22c48a523646ac0a38aa36471529e22cdd1238ce43b44bf5014d64098a"
+      },
+      {
+        "name": "model-00003-of-00006.safetensors",
+        "bytes": 4954847392,
+        "sha256": "97587f9d511af15bce6295a15b10c43f504b16fcddf22db9c87356df17ffff3f"
+      },
+      {
+        "name": "model-00004-of-00006.safetensors",
+        "bytes": 4954847392,
+        "sha256": "ed34a72606341f8774d21661ad8ec9e59deffad8c63ceebd2f6db86f163bee7d"
+      },
+      {
+        "name": "model-00005-of-00006.safetensors",
+        "bytes": 4954847392,
+        "sha256": "657a6388cfe547498159dfb6507b9c1ead09a6fbab154c22942bbf963aef4208"
+      },
+      {
+        "name": "model-00006-of-00006.safetensors",
+        "bytes": 4734533160,
+        "sha256": "3dbbc07addfc989662fd6bf88798970b278c98630f88eed5d23256fc99365dae"
+      },
+      {
+        "name": "model.safetensors.index.json",
+        "bytes": 47472,
+        "sha256": "425811015c8708208c9efc04c4cfae250c7927a1b04c99dda5a9121caf4bf77a"
+      },
+      {
+        "name": "tokenizer.json",
+        "bytes": 7031645,
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "bytes": 7305,
+        "sha256": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4"
+      },
+      {
+        "name": "vocab.json",
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    ]
+  },
+  {
+    "id": "air-coder-32b",
+    "name": "Qwen2.5 Coder · 32B",
+    "repo": "Qwen/Qwen2.5-Coder-32B-Instruct",
+    "revision": "381fc969f78efac66bc87ff7ddeadb7e73c218a7",
+    "thinking": false,
+    "files": [
+      {
+        "name": "config.json",
+        "bytes": 663,
+        "sha256": "9fb1473a47db69c00c02f365c7b9e9d84fd2163c687c63b5a31167ebb2b189a6"
+      },
+      {
+        "name": "generation_config.json",
+        "bytes": 243,
+        "sha256": "fdaccbcb02f3e1e7914ccb0f69ebe899071ffd27cf825166d823163e156870f2"
+      },
+      {
+        "name": "merges.txt",
+        "bytes": 1671839,
+        "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+      },
+      {
+        "name": "model-00001-of-00014.safetensors",
+        "bytes": 4891730992,
+        "sha256": "5746929d771eb06ba0105671a2018dca3c648d4664ca5a5ce2077df82fabad92"
+      },
+      {
+        "name": "model-00002-of-00014.safetensors",
+        "bytes": 4876059352,
+        "sha256": "12aaad653a85d7212a9cc7722937fff7b2bd060ab8522399b4a74d2bf736df8d"
+      },
+      {
+        "name": "model-00003-of-00014.safetensors",
+        "bytes": 4876059384,
+        "sha256": "9bac433064b2c29f3e2a891539993b74b7a1da5b0a78c900b2e22fc20fe66059"
+      },
+      {
+        "name": "model-00004-of-00014.safetensors",
+        "bytes": 4876059416,
+        "sha256": "4e859e864a61c45dc2e38650359540e5f35f09d4a6993ef66d7274760e7d1905"
+      },
+      {
+        "name": "model-00005-of-00014.safetensors",
+        "bytes": 4876059416,
+        "sha256": "57000579cf2e87cd575333288c25588a45816fc406ace74a52efed1e7bc910d5"
+      },
+      {
+        "name": "model-00006-of-00014.safetensors",
+        "bytes": 4876059416,
+        "sha256": "72dd80465092fad2665c9705332efa99c20b9fb22ad1944e7fe7429a222ede42"
+      },
+      {
+        "name": "model-00007-of-00014.safetensors",
+        "bytes": 4876059416,
+        "sha256": "b91130f8049d3446221000a1d44cdf7bd344f01a2b5843f9bb81ac8193beeae8"
+      },
+      {
+        "name": "model-00008-of-00014.safetensors",
+        "bytes": 4876059416,
+        "sha256": "522db6c67390557f2964a4a0094a463a067c91992be164b6e141aa1267a225e5"
+      },
+      {
+        "name": "model-00009-of-00014.safetensors",
+        "bytes": 4876059416,
+        "sha256": "7c03b072b4aad4da68016b75b78c6eb3ea6b35e18ac0dae4906146603fa32e23"
+      },
+      {
+        "name": "model-00010-of-00014.safetensors",
+        "bytes": 4876059416,
+        "sha256": "c5ee9a4665ae7d5c9e6d37f77d93c47244a80ee41284060efde69d223472a87a"
+      },
+      {
+        "name": "model-00011-of-00014.safetensors",
+        "bytes": 4876059416,
+        "sha256": "49f60205e190369145352de972e3510bcfeef6b5a26041573032edbe132c1e06"
+      },
+      {
+        "name": "model-00012-of-00014.safetensors",
+        "bytes": 4876059416,
+        "sha256": "9a53a0d4a02dcb5f036da4fcd50e408107144ff4c4b09357cf1829be2ef382f9"
+      },
+      {
+        "name": "model-00013-of-00014.safetensors",
+        "bytes": 4876059416,
+        "sha256": "8b26127defc68bff2e0744ae9afc9c8ab1730fee071e0400b4bfe8f07fadda5b"
+      },
+      {
+        "name": "model-00014-of-00014.safetensors",
+        "bytes": 2123397800,
+        "sha256": "983ebbded19c19264d08845710c9993714d60e17f81c62e1e15c8f174af79847"
+      },
+      {
+        "name": "model.safetensors.index.json",
+        "bytes": 63248,
+        "sha256": "e6548816f7ae8cd9fc353a20737f640ad32db6eff13a8c097246084c3207300f"
+      },
+      {
+        "name": "tokenizer.json",
+        "bytes": 7031645,
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "bytes": 7305,
+        "sha256": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4"
+      },
+      {
+        "name": "vocab.json",
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    ]
+  }
+]

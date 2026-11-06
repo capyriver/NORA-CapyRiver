@@ -1,0 +1,43 @@
+[
+  {
+    "name": "@allpepper/memory-bank-mcp",
+    "version": "0.2.2",
+    "license": "MIT",
+    "repository": {
+      "url": "git+https://github.com/alioshr/memory-bank-mcp.git",
+      "type": "git"
+    },
+    "dist": {
+      "shasum": "1d599613d6cfdf9b9bea0b10f8ef01036788e7c8",
+      "tarball": "https://registry.npmjs.org/@allpepper/memory-bank-mcp/-/memory-bank-mcp-0.2.2.tgz",
+      "fileCount": 90,
+      "integrity": "sha512-zgLDu5L0CuLmVokOUD6ZTkViScSppFmJJxF/bJJVb3mVWZkc3RoVBP/MNBW1aafKbV8yRmkE0OBFUCY5Tmkmtg==",
+      "signatures": [
+        {
+          "sig": "MEQCIDN7eFyn60YZB7XiV4vmkw1JrESAaIyLdy5lSI8QmtACAiAy5Ot0emjDX9aLTD6srYfouyQVGd4FsVN5hh/jCQYLEA==",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "unpackedSize": 55795
+    }
+  },
+  {
+    "name": "mcp-knowledge-graph",
+    "version": "1.3.2",
+    "license": "MIT",
+    "repository": null,
+    "dist": {
+      "shasum": "3c35645c661bda455716f4e017fcf6555bcaef0d",
+      "tarball": "https://registry.npmjs.org/mcp-knowledge-graph/-/mcp-knowledge-graph-1.3.2.tgz",
+      "fileCount": 6,
+      "integrity": "sha512-RmX2Y1ERDUCG6TnpGKHNyURgXOl6nB3/I5LJ+hyq7q5UDPuIIC7hshozddQ3hb0eBRVQ/pylS/CcyYxSCoIydQ==",
+      "signatures": [
+        {
+          "sig": "MEQCIDz3Q8D3em/qEIYLGT9BHA+1m+/e5HFeUpuN4D8ABXeGAiARVCOzGQgMinlVkCbkAVRNFwRm9fk6kkngWztygDlVRw==",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "unpackedSize": 72295
+    }
+  }
+]

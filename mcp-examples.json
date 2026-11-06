@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "GitHub-readonly-example": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/x/all/readonly",
+      "headers": {"Authorization": "Bearer ${GITHUB_PERSONAL_ACCESS_TOKEN}"}
+    },
+    "Microsoft-Learn-example": {"url": "https://learn.microsoft.com/api/mcp"},
+    "DeepWiki-example": {"url": "https://mcp.deepwiki.com/mcp"},
+    "My-memory-example": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory@2.0.1"],
+      "env": {"MEMORY_FILE_PATH": "${NORA_MEMORY_PATH}"}
+    }
+  }
+}

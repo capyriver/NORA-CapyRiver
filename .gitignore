@@ -1,0 +1,16 @@
+**/bin/
+**/obj/
+**/publish/
+**/verification-*/
+**/runtime-cache/
+**/models/
+**/nora-v3/base/
+**/nora-v3-runtime/
+**/peft-runtime/
+**/chat-data/
+**/*.log
+**/*.tmp
+.env
+.env.*
+*.user
+*.suo

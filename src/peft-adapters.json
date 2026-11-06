@@ -1,0 +1,877 @@
+{
+  "enabled": true,
+  "reason": "NORA 3.10: separate PEFT runtime, one adapter at a time; download and verify before selection.",
+  "models": [
+    {
+      "id": "stratplans/x3d-qwen2.5-coder-7b-lora",
+      "url": "https://huggingface.co/stratplans/x3d-qwen2.5-coder-7b-lora",
+      "revision": "928613c8e0b7a756a717be1ca5b794528e625293",
+      "likes": 1,
+      "base": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "installedInNora": false,
+      "inferenceTested": false,
+      "behavioralBackdoorsTested": false,
+      "sourceLicense": "apache-2.0",
+      "staticStatus": "audited-files-only-no-known-signature-detected",
+      "weightBytes": 323014168,
+      "files": [
+        {
+          "name": "README.md",
+          "bytes": 4424,
+          "sha256": "24c19de43dc080facdc560fd1f5072185db138bfb1c8f086755b026a06c90987",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/stratplans/x3d-qwen2.5-coder-7b-lora/resolve/928613c8e0b7a756a717be1ca5b794528e625293/README.md"
+        },
+        {
+          "name": "adapter_config.json",
+          "bytes": 942,
+          "sha256": "afbe532922bd5ee32c3de967aec4207936a39899998ac3d167c91764528eab3a",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/stratplans/x3d-qwen2.5-coder-7b-lora/resolve/928613c8e0b7a756a717be1ca5b794528e625293/adapter_config.json"
+        },
+        {
+          "name": "adapter_model.safetensors",
+          "bytes": 323014168,
+          "sha256": "e557d8f3cd475aa25a687821e8a0c3be013f2042b356a5761be13390d046a76b",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/stratplans/x3d-qwen2.5-coder-7b-lora/resolve/928613c8e0b7a756a717be1ca5b794528e625293/adapter_model.safetensors"
+        }
+      ],
+      "repositoryHasExecutableCode": false,
+      "repositoryHasUnsafeSerializedFiles": true,
+      "avScanned": true,
+      "decision": "catalog-candidate-inference-not-evaluated",
+      "avResult": "no-known-signature-detected",
+      "scanner": "ClamAV 1.4.6",
+      "tensorChecks": {
+        "id": "stratplans/x3d-qwen2.5-coder-7b-lora",
+        "tensorCount": 392,
+        "nonfiniteValues": 0,
+        "maxAbsoluteWeight": 0.07336368411779404,
+        "shapeCheckedForQwen25Coder7B": true,
+        "errors": []
+      },
+      "securityScope": "Only selected adapter weights/config/README/license files; repository scripts and pickle files not downloaded or executed.",
+      "integrationReviewReasons": [],
+      "runtimeAvailable": true,
+      "weightsPreviouslyAudited": true
+    },
+    {
+      "id": "fulgidus/zignet-qwen2.5-coder-7b",
+      "url": "https://huggingface.co/fulgidus/zignet-qwen2.5-coder-7b",
+      "revision": "98a6c61abe088f3de78d5771963c7db0a5cf053c",
+      "likes": 3,
+      "base": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "installedInNora": false,
+      "inferenceTested": false,
+      "behavioralBackdoorsTested": false,
+      "sourceLicense": "apache-2.0",
+      "staticStatus": "audited-files-only-no-known-signature-detected",
+      "weightBytes": 161533192,
+      "files": [
+        {
+          "name": "README.md",
+          "bytes": 4265,
+          "sha256": "346196d5881376b46d6c918377d41e646f93555a24789efa972fdf396bb0f2e3",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/fulgidus/zignet-qwen2.5-coder-7b/resolve/98a6c61abe088f3de78d5771963c7db0a5cf053c/README.md"
+        },
+        {
+          "name": "adapter_config.json",
+          "bytes": 733,
+          "sha256": "8b62ca8af9e605e5d2951ba164c7c166328e39f0f90f1d2c6ff40874ef9d0a06",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/fulgidus/zignet-qwen2.5-coder-7b/resolve/98a6c61abe088f3de78d5771963c7db0a5cf053c/adapter_config.json"
+        },
+        {
+          "name": "adapter_model.safetensors",
+          "bytes": 161533192,
+          "sha256": "aa16c3eaf5b4315bd3772298deac0a5733cb22adcec2f1b07a649c780db5c3da",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/fulgidus/zignet-qwen2.5-coder-7b/resolve/98a6c61abe088f3de78d5771963c7db0a5cf053c/adapter_model.safetensors"
+        }
+      ],
+      "repositoryHasExecutableCode": false,
+      "repositoryHasUnsafeSerializedFiles": true,
+      "avScanned": true,
+      "decision": "catalog-candidate-inference-not-evaluated",
+      "avResult": "no-known-signature-detected",
+      "scanner": "ClamAV 1.4.6",
+      "tensorChecks": {
+        "id": "fulgidus/zignet-qwen2.5-coder-7b",
+        "tensorCount": 392,
+        "nonfiniteValues": 0,
+        "maxAbsoluteWeight": 0.48676562309265137,
+        "shapeCheckedForQwen25Coder7B": true,
+        "errors": []
+      },
+      "securityScope": "Only selected adapter weights/config/README/license files; repository scripts and pickle files not downloaded or executed.",
+      "integrationReviewReasons": [],
+      "runtimeAvailable": true,
+      "weightsPreviouslyAudited": true
+    },
+    {
+      "id": "scthornton/qwen2.5-coder-7b-securecode",
+      "url": "https://huggingface.co/scthornton/qwen2.5-coder-7b-securecode",
+      "revision": "4ea903e7da57091805d92b14d61610ac72d4d082",
+      "likes": 1,
+      "base": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "installedInNora": false,
+      "inferenceTested": false,
+      "behavioralBackdoorsTested": false,
+      "sourceLicense": "apache-2.0",
+      "staticStatus": "audited-files-only-no-known-signature-detected",
+      "weightBytes": 161533192,
+      "files": [
+        {
+          "name": "README.md",
+          "bytes": 9961,
+          "sha256": "71af5da630d61f21211c9abed7b23d5cd88d6e9ae8d0f96c51f4e26f3e41b8c7",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/scthornton/qwen2.5-coder-7b-securecode/resolve/4ea903e7da57091805d92b14d61610ac72d4d082/README.md"
+        },
+        {
+          "name": "adapter_config.json",
+          "bytes": 1061,
+          "sha256": "4ff9f46dc7163fd4adf9e87be8cede8245a4b979c3abc92b476bdd7a7d3c6a06",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/scthornton/qwen2.5-coder-7b-securecode/resolve/4ea903e7da57091805d92b14d61610ac72d4d082/adapter_config.json"
+        },
+        {
+          "name": "adapter_model.safetensors",
+          "bytes": 161533192,
+          "sha256": "2be6038a323bba7601bdb4ed73276a915f0c96b0c4899ce2b1840e7289840813",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/scthornton/qwen2.5-coder-7b-securecode/resolve/4ea903e7da57091805d92b14d61610ac72d4d082/adapter_model.safetensors"
+        }
+      ],
+      "repositoryHasExecutableCode": false,
+      "repositoryHasUnsafeSerializedFiles": true,
+      "avScanned": true,
+      "decision": "catalog-candidate-inference-not-evaluated",
+      "avResult": "no-known-signature-detected",
+      "scanner": "ClamAV 1.4.6",
+      "tensorChecks": {
+        "id": "scthornton/qwen2.5-coder-7b-securecode",
+        "tensorCount": 392,
+        "nonfiniteValues": 0,
+        "maxAbsoluteWeight": 0.0651467964053154,
+        "shapeCheckedForQwen25Coder7B": true,
+        "errors": []
+      },
+      "securityScope": "Only selected adapter weights/config/README/license files; repository scripts and pickle files not downloaded or executed.",
+      "integrationReviewReasons": [],
+      "runtimeAvailable": true,
+      "weightsPreviouslyAudited": true
+    },
+    {
+      "id": "alxstuff/Lumen-7b-v2",
+      "url": "https://huggingface.co/alxstuff/Lumen-7b-v2",
+      "revision": "0481997c70505c007baa62603e1fe44dd93238a6",
+      "likes": 1,
+      "base": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "installedInNora": false,
+      "inferenceTested": false,
+      "behavioralBackdoorsTested": false,
+      "sourceLicense": "apache-2.0",
+      "staticStatus": "audited-files-only-no-known-signature-detected",
+      "weightBytes": 323014168,
+      "files": [
+        {
+          "name": "README.md",
+          "bytes": 3863,
+          "sha256": "3667ce2f6da3b4f6f64d8d2fe4147a2af3fad96fdc88c28aa7625f4b8b7d9701",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/alxstuff/Lumen-7b-v2/resolve/0481997c70505c007baa62603e1fe44dd93238a6/README.md"
+        },
+        {
+          "name": "adapter_config.json",
+          "bytes": 733,
+          "sha256": "d61b1d1a908e663da64b3b05ebdba4f61e518810e6bddfaebd309eb2184516e2",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/alxstuff/Lumen-7b-v2/resolve/0481997c70505c007baa62603e1fe44dd93238a6/adapter_config.json"
+        },
+        {
+          "name": "adapter_model.safetensors",
+          "bytes": 323014168,
+          "sha256": "3aa914e4a176cfa7f1fdefcc0dd3c4ed2174e5ba0c157d519ccb3d54ca3b31e7",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/alxstuff/Lumen-7b-v2/resolve/0481997c70505c007baa62603e1fe44dd93238a6/adapter_model.safetensors"
+        }
+      ],
+      "repositoryHasExecutableCode": false,
+      "repositoryHasUnsafeSerializedFiles": true,
+      "avScanned": true,
+      "decision": "catalog-candidate-inference-not-evaluated",
+      "avResult": "no-known-signature-detected",
+      "scanner": "ClamAV 1.4.6",
+      "tensorChecks": {
+        "id": "alxstuff/Lumen-7b-v2",
+        "tensorCount": 392,
+        "nonfiniteValues": 0,
+        "maxAbsoluteWeight": 0.0181218683719635,
+        "shapeCheckedForQwen25Coder7B": true,
+        "errors": []
+      },
+      "securityScope": "Only selected adapter weights/config/README/license files; repository scripts and pickle files not downloaded or executed.",
+      "integrationReviewReasons": [],
+      "runtimeAvailable": true,
+      "weightsPreviouslyAudited": true
+    },
+    {
+      "id": "jk200201/qwen2.5-coder-7b-sql-dpo",
+      "url": "https://huggingface.co/jk200201/qwen2.5-coder-7b-sql-dpo",
+      "revision": "85f522ce88dda5717735efaaa57a4cb15605edb5",
+      "likes": 1,
+      "base": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "installedInNora": false,
+      "inferenceTested": false,
+      "behavioralBackdoorsTested": false,
+      "sourceLicense": "apache-2.0",
+      "staticStatus": "audited-files-only-no-known-signature-detected",
+      "weightBytes": 323014168,
+      "files": [
+        {
+          "name": "README.md",
+          "bytes": 4401,
+          "sha256": "9f23d17a6db2ea0d86e8ba81bf0fdc76a6963def9f3357f134fe5d154913ebcc",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/jk200201/qwen2.5-coder-7b-sql-dpo/resolve/85f522ce88dda5717735efaaa57a4cb15605edb5/README.md"
+        },
+        {
+          "name": "adapter_config.json",
+          "bytes": 1060,
+          "sha256": "44ace23afbee1f26f96124cc99fbe82c46c2baaf633784a6b6c4a80d7e24b9cf",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/jk200201/qwen2.5-coder-7b-sql-dpo/resolve/85f522ce88dda5717735efaaa57a4cb15605edb5/adapter_config.json"
+        },
+        {
+          "name": "adapter_model.safetensors",
+          "bytes": 323014168,
+          "sha256": "34951a2d4294a30f58b9f230364501ffaae66f8213e858bbfb46d59a9d07d3b2",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/jk200201/qwen2.5-coder-7b-sql-dpo/resolve/85f522ce88dda5717735efaaa57a4cb15605edb5/adapter_model.safetensors"
+        }
+      ],
+      "repositoryHasExecutableCode": false,
+      "repositoryHasUnsafeSerializedFiles": true,
+      "avScanned": true,
+      "decision": "catalog-candidate-inference-not-evaluated",
+      "avResult": "no-known-signature-detected",
+      "scanner": "ClamAV 1.4.6",
+      "tensorChecks": {
+        "id": "jk200201/qwen2.5-coder-7b-sql-dpo",
+        "tensorCount": 392,
+        "nonfiniteValues": 0,
+        "maxAbsoluteWeight": 0.044391315430402756,
+        "shapeCheckedForQwen25Coder7B": true,
+        "errors": []
+      },
+      "securityScope": "Only selected adapter weights/config/README/license files; repository scripts and pickle files not downloaded or executed.",
+      "integrationReviewReasons": [],
+      "runtimeAvailable": true,
+      "weightsPreviouslyAudited": true
+    },
+    {
+      "id": "SeifElden2342532/Code-Optimizer",
+      "url": "https://huggingface.co/SeifElden2342532/Code-Optimizer",
+      "revision": "7a0fbc3cfe6bb7775439f5dbe89cafa9284542e9",
+      "likes": 2,
+      "base": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "installedInNora": false,
+      "inferenceTested": false,
+      "behavioralBackdoorsTested": false,
+      "sourceLicense": "apache-2.0",
+      "staticStatus": "audited-files-only-no-known-signature-detected",
+      "weightBytes": 645975704,
+      "files": [
+        {
+          "name": "README.md",
+          "bytes": 3168,
+          "sha256": "eb3a10003c3c37076ca8df089e72348de0df6aa6bb45f79099ab070f893c9875",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/SeifElden2342532/Code-Optimizer/resolve/7a0fbc3cfe6bb7775439f5dbe89cafa9284542e9/README.md"
+        },
+        {
+          "name": "adapter_config.json",
+          "bytes": 734,
+          "sha256": "45546d02a7225be356195f6d7238855834eb45210bd9122c249c448d7cacee0c",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/SeifElden2342532/Code-Optimizer/resolve/7a0fbc3cfe6bb7775439f5dbe89cafa9284542e9/adapter_config.json"
+        },
+        {
+          "name": "adapter_model.safetensors",
+          "bytes": 645975704,
+          "sha256": "c44b484aaca8ab1ffe020c8a1b7503d6315cf7e8b753fc0f422e46e8906dd4fc",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/SeifElden2342532/Code-Optimizer/resolve/7a0fbc3cfe6bb7775439f5dbe89cafa9284542e9/adapter_model.safetensors"
+        }
+      ],
+      "repositoryHasExecutableCode": false,
+      "repositoryHasUnsafeSerializedFiles": true,
+      "avScanned": true,
+      "decision": "catalog-candidate-inference-not-evaluated",
+      "avResult": "no-known-signature-detected",
+      "scanner": "ClamAV 1.4.6",
+      "tensorChecks": {
+        "id": "SeifElden2342532/Code-Optimizer",
+        "tensorCount": 392,
+        "nonfiniteValues": 0,
+        "maxAbsoluteWeight": 0.03286176174879074,
+        "shapeCheckedForQwen25Coder7B": true,
+        "errors": []
+      },
+      "securityScope": "Only selected adapter weights/config/README/license files; repository scripts and pickle files not downloaded or executed.",
+      "integrationReviewReasons": [],
+      "runtimeAvailable": true,
+      "weightsPreviouslyAudited": true
+    },
+    {
+      "id": "jk200201/qwen2.5-coder-7b-bird-dpo",
+      "url": "https://huggingface.co/jk200201/qwen2.5-coder-7b-bird-dpo",
+      "revision": "4d685c91b23140c53a0aa4784409b7048357396a",
+      "likes": 1,
+      "base": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "installedInNora": false,
+      "inferenceTested": false,
+      "behavioralBackdoorsTested": false,
+      "sourceLicense": "apache-2.0",
+      "staticStatus": "audited-files-only-no-known-signature-detected",
+      "weightBytes": 323014168,
+      "files": [
+        {
+          "name": "README.md",
+          "bytes": 5297,
+          "sha256": "2896a88ffc649c3646b58e136163a621e1fbd604ee57f912e42e69fe02b11a13",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/jk200201/qwen2.5-coder-7b-bird-dpo/resolve/4d685c91b23140c53a0aa4784409b7048357396a/README.md"
+        },
+        {
+          "name": "adapter_config.json",
+          "bytes": 1060,
+          "sha256": "b027c49879f07cd01a45c72f7c102e8ffe3f6812eb7d736b132941e1fc707327",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/jk200201/qwen2.5-coder-7b-bird-dpo/resolve/4d685c91b23140c53a0aa4784409b7048357396a/adapter_config.json"
+        },
+        {
+          "name": "adapter_model.safetensors",
+          "bytes": 323014168,
+          "sha256": "b5e638f4a0588b838a9c396b598af15a9f2e09e877ee321d6fa2b2a593ceec9d",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/jk200201/qwen2.5-coder-7b-bird-dpo/resolve/4d685c91b23140c53a0aa4784409b7048357396a/adapter_model.safetensors"
+        }
+      ],
+      "repositoryHasExecutableCode": false,
+      "repositoryHasUnsafeSerializedFiles": true,
+      "avScanned": true,
+      "decision": "catalog-candidate-inference-not-evaluated",
+      "avResult": "no-known-signature-detected",
+      "scanner": "ClamAV 1.4.6",
+      "tensorChecks": {
+        "id": "jk200201/qwen2.5-coder-7b-bird-dpo",
+        "tensorCount": 392,
+        "nonfiniteValues": 0,
+        "maxAbsoluteWeight": 0.044918373227119446,
+        "shapeCheckedForQwen25Coder7B": true,
+        "errors": []
+      },
+      "securityScope": "Only selected adapter weights/config/README/license files; repository scripts and pickle files not downloaded or executed.",
+      "integrationReviewReasons": [],
+      "runtimeAvailable": true,
+      "weightsPreviouslyAudited": true
+    },
+    {
+      "id": "ljawadi/eschaton-terraform-savant-v0.4.19",
+      "url": "https://huggingface.co/ljawadi/eschaton-terraform-savant-v0.4.19",
+      "revision": "3a9271f415df86fa3c72515ca68316ce0155d2f0",
+      "likes": 1,
+      "base": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "installedInNora": false,
+      "inferenceTested": false,
+      "behavioralBackdoorsTested": false,
+      "sourceLicense": "apache-2.0",
+      "staticStatus": "audited-files-only-no-known-signature-detected",
+      "weightBytes": 161533192,
+      "files": [
+        {
+          "name": "README.md",
+          "bytes": 14201,
+          "sha256": "46ea4f4c068e1c33ff2fa6fe5db03c147a5100768ca5d8d983d0a2a165ccd6a2",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/ljawadi/eschaton-terraform-savant-v0.4.19/resolve/3a9271f415df86fa3c72515ca68316ce0155d2f0/README.md"
+        },
+        {
+          "name": "adapter_config.json",
+          "bytes": 1108,
+          "sha256": "d65d6abdc4e8bfd3b29961c8460933ca906a69d5003f603b767bc24141d794b3",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/ljawadi/eschaton-terraform-savant-v0.4.19/resolve/3a9271f415df86fa3c72515ca68316ce0155d2f0/adapter_config.json"
+        },
+        {
+          "name": "adapter_model.safetensors",
+          "bytes": 161533192,
+          "sha256": "1dd96a1b3639411a880b757f21fbdcba5f9bcaa564769ca95a55cda2467c62da",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/ljawadi/eschaton-terraform-savant-v0.4.19/resolve/3a9271f415df86fa3c72515ca68316ce0155d2f0/adapter_model.safetensors"
+        }
+      ],
+      "repositoryHasExecutableCode": false,
+      "repositoryHasUnsafeSerializedFiles": false,
+      "avScanned": true,
+      "decision": "catalog-candidate-inference-not-evaluated",
+      "avResult": "no-known-signature-detected",
+      "scanner": "ClamAV 1.4.6",
+      "tensorChecks": {
+        "id": "ljawadi/eschaton-terraform-savant-v0.4.19",
+        "tensorCount": 392,
+        "nonfiniteValues": 0,
+        "maxAbsoluteWeight": 0.028672542423009872,
+        "shapeCheckedForQwen25Coder7B": true,
+        "errors": []
+      },
+      "securityScope": "Only selected adapter weights/config/README/license files; repository scripts and pickle files not downloaded or executed.",
+      "integrationReviewReasons": [],
+      "runtimeAvailable": true,
+      "weightsPreviouslyAudited": true
+    },
+    {
+      "id": "vandijklab/CpGAtlas-NL-to-SQL-Qwen2.5-Coder-7B-LoRA",
+      "url": "https://huggingface.co/vandijklab/CpGAtlas-NL-to-SQL-Qwen2.5-Coder-7B-LoRA",
+      "revision": "c633d606ab29f2956e8f6413de6cc2aa29ab21ee",
+      "likes": 1,
+      "base": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "installedInNora": false,
+      "inferenceTested": false,
+      "behavioralBackdoorsTested": false,
+      "sourceLicense": "apache-2.0",
+      "staticStatus": "audited-files-only-no-known-signature-detected",
+      "weightBytes": 323014168,
+      "files": [
+        {
+          "name": "README.md",
+          "bytes": 5003,
+          "sha256": "347400ad4eb6042ece67752c06664e0de0a5803c8cbb7dc1e91f2df3102cf83f",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/vandijklab/CpGAtlas-NL-to-SQL-Qwen2.5-Coder-7B-LoRA/resolve/c633d606ab29f2956e8f6413de6cc2aa29ab21ee/README.md"
+        },
+        {
+          "name": "adapter_config.json",
+          "bytes": 733,
+          "sha256": "d98628ffb4824d089d3e9835452ada21191676d3e5f399862a2855d191788a77",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/vandijklab/CpGAtlas-NL-to-SQL-Qwen2.5-Coder-7B-LoRA/resolve/c633d606ab29f2956e8f6413de6cc2aa29ab21ee/adapter_config.json"
+        },
+        {
+          "name": "adapter_model.safetensors",
+          "bytes": 323014168,
+          "sha256": "06e014b5ecfdf52b1d617134ee484f39ac379e797fffa34e268568dbdd47136c",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/vandijklab/CpGAtlas-NL-to-SQL-Qwen2.5-Coder-7B-LoRA/resolve/c633d606ab29f2956e8f6413de6cc2aa29ab21ee/adapter_model.safetensors"
+        }
+      ],
+      "repositoryHasExecutableCode": false,
+      "repositoryHasUnsafeSerializedFiles": false,
+      "avScanned": true,
+      "decision": "catalog-candidate-inference-not-evaluated",
+      "avResult": "no-known-signature-detected",
+      "scanner": "ClamAV 1.4.6",
+      "tensorChecks": {
+        "id": "vandijklab/CpGAtlas-NL-to-SQL-Qwen2.5-Coder-7B-LoRA",
+        "tensorCount": 392,
+        "nonfiniteValues": 0,
+        "maxAbsoluteWeight": 0.02316366881132126,
+        "shapeCheckedForQwen25Coder7B": true,
+        "errors": []
+      },
+      "securityScope": "Only selected adapter weights/config/README/license files; repository scripts and pickle files not downloaded or executed.",
+      "integrationReviewReasons": [],
+      "runtimeAvailable": true,
+      "weightsPreviouslyAudited": true
+    },
+    {
+      "id": "akeakeaki/pytorch-rag-lora-synth-v2",
+      "url": "https://huggingface.co/akeakeaki/pytorch-rag-lora-synth-v2",
+      "revision": "56c4455613a6d76c8c28973aacc7a2954cbcebb8",
+      "likes": 1,
+      "base": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "installedInNora": false,
+      "inferenceTested": false,
+      "behavioralBackdoorsTested": false,
+      "sourceLicense": "apache-2.0",
+      "staticStatus": "audited-files-only-no-known-signature-detected",
+      "weightBytes": 161533192,
+      "files": [
+        {
+          "name": "README.md",
+          "bytes": 2360,
+          "sha256": "a43931c30f03b05577d3079a93fcd618c6292f208cf579cc88a0ca9a7217114b",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/akeakeaki/pytorch-rag-lora-synth-v2/resolve/56c4455613a6d76c8c28973aacc7a2954cbcebb8/README.md"
+        },
+        {
+          "name": "adapter_config.json",
+          "bytes": 1109,
+          "sha256": "cd112f71a97449617f3742887620c9c042549e6c5be8dcaa553373aa7ec82619",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/akeakeaki/pytorch-rag-lora-synth-v2/resolve/56c4455613a6d76c8c28973aacc7a2954cbcebb8/adapter_config.json"
+        },
+        {
+          "name": "adapter_model.safetensors",
+          "bytes": 161533192,
+          "sha256": "aa5e1bb7d65d3d13e241c87d302bca9e362e97637441c1835d9cd19c17766d7b",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/akeakeaki/pytorch-rag-lora-synth-v2/resolve/56c4455613a6d76c8c28973aacc7a2954cbcebb8/adapter_model.safetensors"
+        }
+      ],
+      "repositoryHasExecutableCode": false,
+      "repositoryHasUnsafeSerializedFiles": true,
+      "avScanned": true,
+      "decision": "catalog-candidate-inference-not-evaluated",
+      "avResult": "no-known-signature-detected",
+      "scanner": "ClamAV 1.4.6",
+      "tensorChecks": {
+        "id": "akeakeaki/pytorch-rag-lora-synth-v2",
+        "tensorCount": 392,
+        "nonfiniteValues": 0,
+        "maxAbsoluteWeight": 0.08884482085704803,
+        "shapeCheckedForQwen25Coder7B": true,
+        "errors": []
+      },
+      "securityScope": "Only selected adapter weights/config/README/license files; repository scripts and pickle files not downloaded or executed.",
+      "integrationReviewReasons": [],
+      "runtimeAvailable": true,
+      "weightsPreviouslyAudited": true
+    },
+    {
+      "id": "abkmystery/PySecPatch-7B",
+      "url": "https://huggingface.co/abkmystery/PySecPatch-7B",
+      "revision": "add8f293cb32932a17385ad170f98ec053f8bac4",
+      "likes": 1,
+      "base": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "installedInNora": false,
+      "inferenceTested": false,
+      "behavioralBackdoorsTested": false,
+      "sourceLicense": "apache-2.0",
+      "staticStatus": "audited-files-only-no-known-signature-detected",
+      "weightBytes": 80792880,
+      "files": [
+        {
+          "name": "LICENSE",
+          "bytes": 10258,
+          "sha256": "b1bf03230164f7ab55ecd2284689b7bd7d7d5488e5bbb920b34b93e99f65a5b0",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/abkmystery/PySecPatch-7B/resolve/add8f293cb32932a17385ad170f98ec053f8bac4/LICENSE"
+        },
+        {
+          "name": "README.md",
+          "bytes": 4976,
+          "sha256": "9e79a5e4a77a9c7394c78c5b128c0a8bbdea428449c920cd3cd000515addd2c6",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/abkmystery/PySecPatch-7B/resolve/add8f293cb32932a17385ad170f98ec053f8bac4/README.md"
+        },
+        {
+          "name": "adapter_config.json",
+          "bytes": 1109,
+          "sha256": "eb09a53c96e81a089c5c2e9cfe356ab450a6093b3d81f4885f5c7447388d1a39",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/abkmystery/PySecPatch-7B/resolve/add8f293cb32932a17385ad170f98ec053f8bac4/adapter_config.json"
+        },
+        {
+          "name": "adapter_model.safetensors",
+          "bytes": 80792880,
+          "sha256": "4c2b5c7c0d2982b99de9c319e998274fc12f3aae5bf8d2c3b5db58c5864dc65b",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/abkmystery/PySecPatch-7B/resolve/add8f293cb32932a17385ad170f98ec053f8bac4/adapter_model.safetensors"
+        }
+      ],
+      "repositoryHasExecutableCode": false,
+      "repositoryHasUnsafeSerializedFiles": false,
+      "avScanned": true,
+      "decision": "catalog-candidate-inference-not-evaluated",
+      "avResult": "no-known-signature-detected",
+      "scanner": "ClamAV 1.4.6",
+      "tensorChecks": {
+        "id": "abkmystery/PySecPatch-7B",
+        "tensorCount": 392,
+        "nonfiniteValues": 0,
+        "maxAbsoluteWeight": 0.44921875,
+        "shapeCheckedForQwen25Coder7B": true,
+        "errors": []
+      },
+      "securityScope": "Only selected adapter weights/config/README/license files; repository scripts and pickle files not downloaded or executed.",
+      "integrationReviewReasons": [],
+      "runtimeAvailable": true,
+      "weightsPreviouslyAudited": true
+    },
+    {
+      "id": "jumplander/JX-Coder-7B-Agent-Behavior",
+      "url": "https://huggingface.co/jumplander/JX-Coder-7B-Agent-Behavior",
+      "revision": "9494181bfa48f1777059fb3bd931660f44a3400e",
+      "likes": 4,
+      "base": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "installedInNora": false,
+      "inferenceTested": false,
+      "behavioralBackdoorsTested": false,
+      "sourceLicense": "apache-2.0",
+      "staticStatus": "audited-files-only-no-known-signature-detected",
+      "weightBytes": 80792880,
+      "files": [
+        {
+          "name": "README.md",
+          "bytes": 32454,
+          "sha256": "44f3038cb566ed78f6ed72fab92ebd965486c2ba36544913d277e2a157a7a14d",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/jumplander/JX-Coder-7B-Agent-Behavior/resolve/9494181bfa48f1777059fb3bd931660f44a3400e/README.md"
+        },
+        {
+          "name": "adapter_config.json",
+          "bytes": 1212,
+          "sha256": "45eb4cebe3645598ed78405b9fbb2595d296e0fccb52c5191639851e1f95ac55",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/jumplander/JX-Coder-7B-Agent-Behavior/resolve/9494181bfa48f1777059fb3bd931660f44a3400e/adapter_config.json"
+        },
+        {
+          "name": "adapter_model.safetensors",
+          "bytes": 80792880,
+          "sha256": "05604b75d2e8839cca99a817ef506412b95146ed4cafc072a1a4e611feec11c5",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/jumplander/JX-Coder-7B-Agent-Behavior/resolve/9494181bfa48f1777059fb3bd931660f44a3400e/adapter_model.safetensors"
+        }
+      ],
+      "repositoryHasExecutableCode": false,
+      "repositoryHasUnsafeSerializedFiles": false,
+      "avScanned": true,
+      "decision": "catalog-candidate-inference-not-evaluated",
+      "avResult": "no-known-signature-detected",
+      "scanner": "ClamAV 1.4.6",
+      "tensorChecks": {
+        "id": "jumplander/JX-Coder-7B-Agent-Behavior",
+        "tensorCount": 392,
+        "nonfiniteValues": 0,
+        "maxAbsoluteWeight": 0.1513671875,
+        "shapeCheckedForQwen25Coder7B": true,
+        "errors": []
+      },
+      "securityScope": "Only selected adapter weights/config/README/license files; repository scripts and pickle files not downloaded or executed.",
+      "integrationReviewReasons": [],
+      "runtimeAvailable": true,
+      "weightsPreviouslyAudited": true
+    },
+    {
+      "id": "gnuchev/luminus-coder-7b-sft-adapter",
+      "url": "https://huggingface.co/gnuchev/luminus-coder-7b-sft-adapter",
+      "revision": "010fdda3b3037723cf4aac85d8fab68b7d108427",
+      "likes": 1,
+      "base": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "installedInNora": false,
+      "inferenceTested": false,
+      "behavioralBackdoorsTested": false,
+      "sourceLicense": "apache-2.0",
+      "staticStatus": "audited-files-only-no-known-signature-detected",
+      "weightBytes": 80770432,
+      "files": [
+        {
+          "name": "README.md",
+          "bytes": 802,
+          "sha256": "875af1126444c1158b6754b074befa6a77ce2dd02ed3ffdf2bf321bdcdbb7b0b",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/gnuchev/luminus-coder-7b-sft-adapter/resolve/010fdda3b3037723cf4aac85d8fab68b7d108427/README.md"
+        },
+        {
+          "name": "adapter_config.json",
+          "bytes": 1136,
+          "sha256": "dbae5e34060462717114a344dfb4f8c2ee91b48d862fd74880e249180b87c179",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/gnuchev/luminus-coder-7b-sft-adapter/resolve/010fdda3b3037723cf4aac85d8fab68b7d108427/adapter_config.json"
+        },
+        {
+          "name": "adapter_model.safetensors",
+          "bytes": 80770432,
+          "sha256": "aca0f6076ce1db756fd09ab84ea9e9aaab31548e3e0f09101998de31761a1839",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/gnuchev/luminus-coder-7b-sft-adapter/resolve/010fdda3b3037723cf4aac85d8fab68b7d108427/adapter_model.safetensors"
+        }
+      ],
+      "repositoryHasExecutableCode": false,
+      "repositoryHasUnsafeSerializedFiles": false,
+      "avScanned": true,
+      "decision": "catalog-candidate-inference-not-evaluated",
+      "avResult": "no-known-signature-detected",
+      "scanner": "ClamAV 1.4.6",
+      "tensorChecks": {
+        "id": "gnuchev/luminus-coder-7b-sft-adapter",
+        "tensorCount": 224,
+        "nonfiniteValues": 0,
+        "maxAbsoluteWeight": 0.05545184016227722,
+        "shapeCheckedForQwen25Coder7B": true,
+        "errors": []
+      },
+      "securityScope": "Only selected adapter weights/config/README/license files; repository scripts and pickle files not downloaded or executed.",
+      "integrationReviewReasons": [],
+      "runtimeAvailable": true,
+      "weightsPreviouslyAudited": true
+    },
+    {
+      "id": "Tornado9991/antcoder-planner-7b",
+      "url": "https://huggingface.co/Tornado9991/antcoder-planner-7b",
+      "revision": "fc6d1880a78abe028846fecab509a34335fc54c9",
+      "likes": 1,
+      "base": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "installedInNora": false,
+      "inferenceTested": false,
+      "behavioralBackdoorsTested": false,
+      "sourceLicense": "gpl-3.0",
+      "staticStatus": "audited-files-only-no-known-signature-detected",
+      "weightBytes": 323014168,
+      "files": [
+        {
+          "name": "README.md",
+          "bytes": 10378,
+          "sha256": "02bc4e098cfa5c41f714dd12a34d49ccb5ef25c2941d5073890c08dabe2043d0",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/Tornado9991/antcoder-planner-7b/resolve/fc6d1880a78abe028846fecab509a34335fc54c9/README.md"
+        },
+        {
+          "name": "adapter_config.json",
+          "bytes": 1186,
+          "sha256": "c8fda603e5d2f086f1bbb8a6eac30faf8a69522758de01104a7d3de9b18e5f09",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/Tornado9991/antcoder-planner-7b/resolve/fc6d1880a78abe028846fecab509a34335fc54c9/adapter_config.json"
+        },
+        {
+          "name": "adapter_model.safetensors",
+          "bytes": 323014168,
+          "sha256": "222f3adb790c45672fcfc0af6c7d5806c6ee177f59b0e4e22c12c826eb51c07a",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/Tornado9991/antcoder-planner-7b/resolve/fc6d1880a78abe028846fecab509a34335fc54c9/adapter_model.safetensors"
+        }
+      ],
+      "repositoryHasExecutableCode": false,
+      "repositoryHasUnsafeSerializedFiles": false,
+      "avScanned": true,
+      "decision": "catalog-candidate-inference-not-evaluated",
+      "avResult": "no-known-signature-detected",
+      "scanner": "ClamAV 1.4.6",
+      "tensorChecks": {
+        "id": "Tornado9991/antcoder-planner-7b",
+        "tensorCount": 392,
+        "nonfiniteValues": 0,
+        "maxAbsoluteWeight": 0.17928940057754517,
+        "shapeCheckedForQwen25Coder7B": true,
+        "errors": []
+      },
+      "securityScope": "Only selected adapter weights/config/README/license files; repository scripts and pickle files not downloaded or executed.",
+      "integrationReviewReasons": [],
+      "runtimeAvailable": true,
+      "weightsPreviouslyAudited": true
+    },
+    {
+      "id": "AlreemDoss/mujassam-qwen7b-qlora",
+      "url": "https://huggingface.co/AlreemDoss/mujassam-qwen7b-qlora",
+      "revision": "accc1c956fa4f053df5ac7eb337af37cfbc8114a",
+      "likes": 1,
+      "base": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "installedInNora": false,
+      "inferenceTested": false,
+      "behavioralBackdoorsTested": false,
+      "sourceLicense": "apache-2.0",
+      "staticStatus": "audited-files-only-no-known-signature-detected",
+      "weightBytes": 161533192,
+      "files": [
+        {
+          "name": "README.md",
+          "bytes": 2120,
+          "sha256": "7442cac6737f9f82c7039594d8fbc9c17eff43001fe829b54118cbb424a76ff5",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/AlreemDoss/mujassam-qwen7b-qlora/resolve/accc1c956fa4f053df5ac7eb337af37cfbc8114a/README.md"
+        },
+        {
+          "name": "adapter_config.json",
+          "bytes": 1186,
+          "sha256": "5a61b3b8116e754713866325af99bc5942d45369cb515d61a2756d03f4ebfefc",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/AlreemDoss/mujassam-qwen7b-qlora/resolve/accc1c956fa4f053df5ac7eb337af37cfbc8114a/adapter_config.json"
+        },
+        {
+          "name": "adapter_model.safetensors",
+          "bytes": 161533192,
+          "sha256": "73cfac5f3da21fcb229fa8cdf86b601cff6bcf37fb944da63c8193e90ff6a1f9",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/AlreemDoss/mujassam-qwen7b-qlora/resolve/accc1c956fa4f053df5ac7eb337af37cfbc8114a/adapter_model.safetensors"
+        }
+      ],
+      "repositoryHasExecutableCode": false,
+      "repositoryHasUnsafeSerializedFiles": false,
+      "avScanned": true,
+      "decision": "catalog-candidate-inference-not-evaluated",
+      "avResult": "no-known-signature-detected",
+      "scanner": "ClamAV 1.4.6",
+      "tensorChecks": {
+        "id": "AlreemDoss/mujassam-qwen7b-qlora",
+        "tensorCount": 392,
+        "nonfiniteValues": 0,
+        "maxAbsoluteWeight": 0.15502852201461792,
+        "shapeCheckedForQwen25Coder7B": true,
+        "errors": []
+      },
+      "securityScope": "Only selected adapter weights/config/README/license files; repository scripts and pickle files not downloaded or executed.",
+      "integrationReviewReasons": [],
+      "runtimeAvailable": true,
+      "weightsPreviouslyAudited": true
+    },
+    {
+      "id": "ogmatrixllm/arcadex-llm",
+      "url": "https://huggingface.co/ogmatrixllm/arcadex-llm",
+      "revision": "80fa9fbccf5cc8a428d17100bd9d9ba935f4e7c0",
+      "likes": 1,
+      "base": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "installedInNora": false,
+      "inferenceTested": false,
+      "behavioralBackdoorsTested": false,
+      "sourceLicense": "apache-2.0",
+      "staticStatus": "audited-files-only-no-known-signature-detected",
+      "weightBytes": 80792096,
+      "files": [
+        {
+          "name": "README.md",
+          "bytes": 1268,
+          "sha256": "62250f784d7ffb79060b1672036c8d4ffa1519166c96f6946b520a9013c34661",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/ogmatrixllm/arcadex-llm/resolve/80fa9fbccf5cc8a428d17100bd9d9ba935f4e7c0/README.md"
+        },
+        {
+          "name": "adapter_config.json",
+          "bytes": 554,
+          "sha256": "a4e63e5cdc8177bfb7929275c7daf9df5ba1bf68b202b687a1ef02e36c5eeb16",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/ogmatrixllm/arcadex-llm/resolve/80fa9fbccf5cc8a428d17100bd9d9ba935f4e7c0/adapter_config.json"
+        },
+        {
+          "name": "adapter_model.safetensors",
+          "bytes": 80792096,
+          "sha256": "0002a3de561a278594df40bf61a2d8044c509796bc6e27dc7469e5b2f5b23db7",
+          "upstreamHashMatched": true,
+          "url": "https://huggingface.co/ogmatrixllm/arcadex-llm/resolve/80fa9fbccf5cc8a428d17100bd9d9ba935f4e7c0/adapter_model.safetensors"
+        }
+      ],
+      "repositoryHasExecutableCode": false,
+      "repositoryHasUnsafeSerializedFiles": true,
+      "avScanned": true,
+      "decision": "catalog-candidate-inference-not-evaluated",
+      "avResult": "no-known-signature-detected",
+      "scanner": "ClamAV 1.4.6",
+      "tensorChecks": {
+        "id": "ogmatrixllm/arcadex-llm",
+        "tensorCount": 392,
+        "nonfiniteValues": 0,
+        "maxAbsoluteWeight": 0.03818855807185173,
+        "shapeCheckedForQwen25Coder7B": true,
+        "errors": []
+      },
+      "securityScope": "Only selected adapter weights/config/README/license files; repository scripts and pickle files not downloaded or executed.",
+      "integrationReviewReasons": [],
+      "runtimeAvailable": true,
+      "weightsPreviouslyAudited": true
+    }
+  ]
+}

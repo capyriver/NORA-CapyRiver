@@ -1,0 +1,14 @@
+import ast,asyncio,json,pathlib,shutil,copy
+from playwright.async_api import async_playwright
+R=pathlib.Path(__file__).resolve().parent.parent
+src=ast.parse((R/'tests/ui_test.py').read_text());fixture=eval(compile(ast.Expression(next(n.value for n in src.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='fixture' for t in n.targets))),'fixture','eval'),{'__builtins__':{}})
+checks=[]
+async def main():
+ async with async_playwright() as p:
+  browser=await p.chromium.launch(executable_path=shutil.which('chromium'),headless=True,args=['--no-sandbox']);page=await browser.new_page(viewport={'width':1440,'height':940});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+  await page.add_init_script('window.__sent=[];window.chrome=window.chrome||{};window.chrome.webview={postMessage(x){window.__sent.push(JSON.parse(x))},addEventListener(){}}');await page.goto((R/'src/ui.html').as_uri());await page.evaluate('(d)=>receive({type:"state",data:d})',fixture)
+  def check(value,label):assert value,label;checks.append(label)
+  check(await page.locator('#video-btn').count()==1,'one video entry');await page.locator('#video-btn').click();check(await page.evaluate('__sent.at(-1).action==="createVideo"'),'video dispatch');await page.evaluate('receive({type:"busy",data:true})');check(await page.locator('#video-btn').is_disabled(),'busy prevents double render');await page.evaluate('receive({type:"busy",data:false})');check(await page.locator('#video-btn').evaluate('(e)=>!e.disabled'),'video restored after work')
+  data=copy.deepcopy(fixture);m={'id':'videodemo','role':'assistant','text':'MP4 готов. Монтаж выбранных кадров, не нейрогенерация.','state':'complete','artifacts':[{'id':'abcvideo','name':'NORA-video.mp4','kind':'video','bytes':102400,'relativePath':'ignored'}]};data['current']['messages']=[m];await page.evaluate('(d)=>receive({type:"state",data:d})',data)
+  check('MP4-видео' in await page.locator('.result-file').inner_text(),'MP4 artifact labeled');await page.locator('.result-file button').first.click();check(await page.evaluate('__sent.at(-1).action==="artifactSave"&&__sent.at(-1).data.id==="abcvideo"'),'MP4 save dispatch');await page.locator('.result-file button').nth(1).click();check(await page.evaluate('__sent.at(-1).action==="artifactCopy"&&__sent.at(-1).data.id==="abcvideo"'),'MP4 copy dispatch');check(await page.locator('video').count()==0,'file artifact, no unsupported playback claim');await page.set_viewport_size({'width':390,'height':844});check(await page.evaluate('document.documentElement.scrollWidth===innerWidth'),'mobile artifact fits');check(not errors,'no JavaScript errors');(R/'verification-2.9/video-ui.json').write_text(json.dumps({'passed':len(checks),'checks':checks,'scope':'HTML mocked host, not native Windows'},ensure_ascii=False,indent=2));print(len(checks),'video UI checks passed');await browser.close()
+asyncio.run(main())
