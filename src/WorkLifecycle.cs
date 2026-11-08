@@ -4,7 +4,6 @@ partial class MainWindow {
   var errors=OperationCleanup.Run(
    ()=>{if(activeAgentTask is {Status:"running"}){activeAgentTask.Status="paused";activeAgentTask.Reason="Выполнение прервано. Результат незавершённого вызова необходимо проверить перед повтором.";message.TaskPending=true;message.TaskStatus="paused";SaveAgentTask();}},
    ()=>{activeMediaContext="";activeBrowserContext="";if(message.StartedAt is DateTime at)message.ElapsedSeconds=Math.Max(0,(DateTime.UtcNow-at).TotalSeconds);if(workMessage==message)workMessage=null;},
-   ()=>{if(!closing&&browser is {IsDisposed:false})browser.SetManual(true);},
    ()=>{if(!closing)PublishBrowser();});
   if(errors.Count>0)throw new AggregateException("Не удалось полностью сохранить/завершить операцию",errors);
  }

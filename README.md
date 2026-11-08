@@ -4,7 +4,7 @@
 
 **A local-first Windows AI workspace with the original NORA identity and CapyRiver model labels.**
 
-> **Release · v3.18.7.** NORA will continue to receive updates, though releases may be infrequent. The source and build instructions remain available for owners who need to maintain their own copy.
+> **Release · v4.0.0.** NORA will continue to receive updates, though releases may be infrequent. This major release adds the Sources/Results workspace, a shared multi-tab browser, and an expanded 29-model GGUF catalog.
 
 [English](#english) · [Русский](#русский) · [简体中文](#简体中文)
 
@@ -22,12 +22,15 @@ The app runs locally by default. A model can still be inaccurate, slow or unable
 
 - **Local chat and saved conversations** — create chats, resume drafts and export conversation text. Chat history and local settings are stored on the PC.
 - **CapyRiver model choices** — the original NORA model catalog remains available, with CapyRiver 2B added alongside it and NORA / CapyRiver Core 4B available through the NORA v3 engine. The 2B GGUF is downloaded on demand and checked against its pinned SHA-256. The 4B option uses the bundled NORA LoRA adapter with its pinned base-model setup.
+- **Expanded model catalog** — 29 pinned GGUF choices, including Gemma 2 9B, Mistral Nemo 12B, Qwen Coder 14B, DeepSeek Coder 16B, Qwen 32B, 70B/72B options, and one 123B Mistral Large Q2 quant. Large weights require workstation-class memory and disk; the 123B quant is approximately 45 GB and Q2 trades quality for size.
 - **Model engines** — connect supported local runtimes: llama.cpp for GGUF, AirLLM, PEFT/CUDA adapters, or a local LM Studio endpoint. Hardware and runtime support determine which options are usable.
 - **Context and response controls** — choose context length, output budget, temperature and response mode. Tool use and reasoning depend on the selected model and can fail on small models.
 - **NORA Agent** — a single agent selects relevant instructions from a built-in skills/profile library. It is not hundreds of separate models and does not merge or retrain model weights.
 - **Files and project context** — attach local files, add a public GitHub repository as read-only context, and save generated files to a selected folder. File writes and external tools have confirmation controls.
+- **Sources and Results workspace** — keep attachments and project context in Sources; generated artifacts appear in Results. Export and ZIP actions are available from the conversation workspace.
 - **MCP connections** — connect compatible MCP services and inspect available tools. A service’s own account permissions and plan still apply. Write-capable tools can change external data when enabled.
 - **Browser reading** — read text from public web pages through the app’s browser workflow. It does not provide unrestricted web access; login pages, scripts and some media are unsupported.
+- **Shared multi-tab browser** — open the native browser from the toolbar. The user and NORA work against the same tabs without a timed takeover lock.
 - **Code helpers** — generate and review code, run local Python/JSON checks, and use bundled Ruff checks. Static checks do not prove that code is safe or correct. Bandit requires its separate setup where applicable.
 - **Images and video** — a configured vision model in LM Studio can analyze images. Video review samples up to four frames and has no audio; events between sampled frames may be missed. MP4 creation assembles selected images with FFmpeg; it is not AI video generation.
 - **Memory and feedback** — local notes and feedback can be included in later context. They do not automatically train or change model weights.
@@ -44,7 +47,7 @@ The model may identify its underlying family, produce incorrect answers, or fail
 
 ### Windows setup
 
-1. Download **`NORA-CapyRiver-3.18.7-portable.zip`** from the GitHub release and extract the entire folder.
+1. Download **`NORA-CapyRiver-4.0.0-portable.zip`** from the GitHub release and extract the entire folder.
 2. Start `NORA.exe`. Keep the adjacent runtime files in the extracted folder.
 3. Open **Models** and connect a model. Initial setup downloads the selected weights and checks their integrity; allow enough disk space and time.
 4. For the 4B CUDA path, use a compatible NVIDIA GPU and the supported CUDA runtime. Model speed and memory needs vary by hardware.
@@ -73,6 +76,10 @@ NORA — настольное рабочее пространство для Win
 
 - **Локальный чат и история** — создание диалогов, восстановление черновиков, экспорт текста. История и настройки приложения хранятся на ПК.
 - **Модели CapyRiver** — исходный каталог моделей NORA сохранён, а CapyRiver 2B добавлена к нему; NORA / CapyRiver Core 4B доступна через движок NORA v3. GGUF 2B скачивается по запросу и проверяется по закреплённому SHA-256. Вариант 4B использует включённый адаптер NORA LoRA и закреплённую базовую модель.
+- **Расширенный каталог моделей** — 29 GGUF-вариантов с закреплёнными источниками, включая Gemma 2 9B, Mistral Nemo 12B, Qwen Coder 14B, DeepSeek Coder 16B, Qwen 32B, варианты 70B/72B и Mistral Large 123B Q2. Большие модели требуют много памяти и диска; квант 123B занимает около 45 ГБ и уступает в качестве более точным квантованиям.
+- **Источники и результаты** — вложения и контекст проекта собраны во вкладке «Источники», созданные файлы и экспорты — в «Результатах». Экспорт и создание ZIP доступны в рабочей области чата.
+- **Общий браузер с вкладками** — открывается с панели инструментов. Пользователь и NORA работают в одних вкладках без таймера принудительной передачи управления.
+- **Проверка моделей** — загрузки идут из закреплённых ревизий Hugging Face и проверяются по SHA-256. Описания каталога переведены на русский, английский и упрощённый китайский.
 - **Движки моделей** — поддерживаются локальные варианты llama.cpp для GGUF, AirLLM, PEFT/CUDA и локальный сервер LM Studio. Доступность зависит от оборудования и установленного окружения.
 - **Контекст и ответы** — настройка длины контекста, объёма ответа, температуры и режима ответа. Рассуждения и вызовы инструментов зависят от модели и могут давать сбои на маленьких моделях.
 - **НОРА Агент** — один агент подбирает инструкции из встроенной библиотеки навыков и профилей. Это не сотни отдельных моделей и не объединение или переобучение весов.
@@ -95,7 +102,7 @@ NORA — настольное рабочее пространство для Win
 
 ### Установка в Windows
 
-1. Скачай из релиза GitHub архив **`NORA-CapyRiver-3.18.7-portable.zip`** и распакуй всю папку.
+1. Скачай из релиза GitHub архив **`NORA-CapyRiver-4.0.0-portable.zip`** и распакуй всю папку.
 2. Запусти `NORA.exe`. Не перемещай runtime-файлы отдельно от приложения.
 3. Открой **Модели** и подключи модель. При первой установке выбранные веса загружаются и проверяются; потребуется свободное место и время.
 4. Для 4B с CUDA нужна совместимая видеокарта NVIDIA и поддерживаемое CUDA-окружение. Скорость и расход памяти зависят от компьютера.
@@ -124,6 +131,10 @@ NORA 是一款面向 Windows 的本地优先 AI 工作空间，支持本地语�
 
 - **本地聊天与历史记录** — 创建对话、恢复草稿并导出聊天文本。应用在本机保存聊天记录和设置。
 - **CapyRiver 模型选项** — NORA 原有模型目录完整保留，并新增 CapyRiver 2B；NORA / CapyRiver Core 4B 可通过 NORA v3 引擎使用。2B GGUF 按需下载，并按固定版本的 SHA-256 校验。4B 版本使用随应用提供的 NORA LoRA 适配器和固定底座配置。
+- **扩展模型目录** — 共 29 个 GGUF 选项，来源已固定，包括 Gemma 2 9B、Mistral Nemo 12B、Qwen Coder 14B、DeepSeek Coder 16B、Qwen 32B、70B/72B 选项和 Mistral Large 123B Q2。大型模型需要充足内存和磁盘；123B 量化文件约 45 GB，质量低于更高精度的量化版本。
+- **来源与结果工作区** — 聊天附件和项目上下文集中在“来源”中，生成文件与导出内容显示在“结果”中。聊天工作区提供导出与 ZIP 操作。
+- **共享多标签浏览器** — 从工具栏打开。用户和 NORA 共用相同标签页，不再受定时接管锁影响。
+- **模型完整性检查** — 下载使用固定的 Hugging Face 修订版本，并通过 SHA-256 校验。目录说明提供俄语、英语和简体中文版本。
 - **模型引擎** — 支持本地 llama.cpp GGUF、AirLLM、PEFT/CUDA，或本地 LM Studio 端点。可用性取决于硬件和运行环境。
 - **上下文与回答控制** — 设置上下文长度、输出预算、温度和回答模式。推理与工具调用取决于所选模型，小模型可能无法可靠完成。
 - **NORA Agent** — 单一 Agent 从内置技能与配置文件库中选择相关指令。它不是数百个独立模型，也不会合并或重新训练模型权重。
@@ -146,7 +157,7 @@ NORA 是一款面向 Windows 的本地优先 AI 工作空间，支持本地语�
 
 ### Windows 安装
 
-1. 从 GitHub Release 下载 **`NORA-CapyRiver-3.18.7-portable.zip`** 并完整解压。
+1. 从 GitHub Release 下载 **`NORA-CapyRiver-4.0.0-portable.zip`** 并完整解压。
 2. 运行 `NORA.exe`，请将旁边的运行时文件保留在应用文件夹中。
 3. 打开 **Models** 并连接模型。首次安装时会下载所选权重并校验完整性；请预留磁盘空间和下载时间。
 4. 4B CUDA 路径需要兼容的 NVIDIA 显卡和受支持的 CUDA 环境。速度和显存需求因硬件而异。

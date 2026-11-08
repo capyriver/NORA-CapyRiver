@@ -1,0 +1,33 @@
+{
+  "version": "4.0.0",
+  "target": "win-x64 self-contained portable ZIP",
+  "exe": "NORA.exe",
+  "exeSHA256": "5f0f9be98231a7913da0087595910e1dbf7b67d27418030ea49cf51ee1d518d0",
+  "asset": "NORA-CapyRiver-4.0.0-portable.zip",
+  "assetSHA256": "a07f3263ff6b81e9494990935445bea344786cca6f933900adfd6f5feb3b2595",
+  "sourceSHA256": {
+    "tests/update311_ui.py": "f9b0835c1b1dbe12dfb249f4df074bc5ed0b6ee4422035de4114fee2582d80e8",
+    "tests/update312_ui.py": "390e02863f3c0c226cd723332b095efb8539fe68e66a87bed68acb64617bdd2d",
+    "src/BrowserContext.cs": "5087febfcf7e55e005e52d64347b851435963c21486bd55b8a2f2e1ef94b0826",
+    "tests/browser_ui.py": "217675a0daf8e8a583e6c252620f62de01f62341b507124b622260bc01cf3638",
+    "src/BrowserWindow.cs": "ea103a50f9d144709d615fe77d3a3f37a099581f3ddbd08bc0d15e96c4f7b529",
+    "src/Program.cs": "604cc5085b5ce3b10a68cdd3e4024a5162f8ed2a303920a4628241ed341e723c",
+    "src/ui.html": "69eeee422c1132632670bd3d159ee0761bfecf3de4cf5401875fed4d3c6c015d",
+    "src/LocalChat.csproj": "b60b5fcfdc6779d73515a3c0b0065a1bdc91a9dc19ccac25e4715158fc395657",
+    "tests/workspace_translation_audit.py": "459d47d639d0d8b3818c511d1d316e5e5034fa23000ed4e959a8041da095feed",
+    "tests/fast_browser_ui.py": "8c38f92ac671eea05f059c53487e03571d217a234c52acbf26d61702c87e8ed1",
+    "src/BrowserDock.cs": "b94636765e562919f01f6078f67819f06aee8f3b30ddb1c20975e9ea9ca00edd",
+    "src/WorkLifecycle.cs": "c41d41f3a2d983dbdb7feb2c75256c0cf553e563c58ded26cd19e2dd814b850b",
+    "src/AgentWorkspace.cs": "af32439a679cde34ad47ad63ea5de53773485b019bcb83b29aa606092e5522b1",
+    "src/ModelCatalog.cs": "5ee2f85bc36a1e7609ab93be627e73b5b027d38455c062933c9301d6aa8476f3",
+    "tests/CatalogTests.cs": "e7bff99e2a75d12c101dc4b731d39a471ac045177675a53c1d76dc985d4f9168"
+  },
+  "verification": {
+    "catalog": "121 checks passed",
+    "workspace": "60 checks passed",
+    "localization": "9,100 checks passed",
+    "interfaceTranslation": "81,918 assertions across 803 source strings",
+    "playwright": "not run",
+    "largeModelDownloads": "not downloaded"
+  }
+}

@@ -19,8 +19,9 @@ async def main():
   page=await b.new_page(viewport={'width':1440,'height':960});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
   await page.add_init_script('window.__sent=[];window.chrome={webview:{postMessage(x){__sent.push(JSON.parse(x))},addEventListener(){}}}')
   await page.goto((R/'src/ui.html').as_uri());await page.evaluate('(f)=>receive({type:"state",data:f})',f)
-  check(not errors,'no startup JS errors');check(await page.locator('#nav-connections').is_visible(),'connections always accessible from sidebar');check(await page.locator('#nav-browser').is_visible(),'browser always accessible from sidebar')
-  await page.locator('#nav-browser').click();check(await page.evaluate('__sent.at(-1).action==="browser"'),'browser shortcut invokes host')
+  check(not errors,'no startup JS errors');check(await page.locator('#nav-connections').is_visible(),'connections always accessible from sidebar');check(await page.locator('#nav-browser').count()==0,'browser removed from sidebar')
+  check(await page.locator('#sources-btn').is_visible(),'Sources/Results toolbar button visible')
+  await page.locator('#panel-btn').click();check(await page.evaluate('__sent.at(-1).action==="browser"'),'former context toolbar button opens browser')
   async def bake(name,script=''):
    content=await page.content();content=content.replace('</body>','<script>receive('+json.dumps({'type':'state','data':f},ensure_ascii=False)+');'+script+'</script></body>');(O/name).write_text(content)
   await bake('home.html')
