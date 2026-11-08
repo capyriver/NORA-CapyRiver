@@ -33,7 +33,7 @@ partial class MainWindow {
   int attempt=++startupAttempt;startupReady=false;startupFailed=false;
   try{
    StartupStage(attempt,"Initializing WebView2");
-   var env=await CoreWebView2Environment.CreateAsync(null,Path.Combine(root,"webview-ui-3.3"),new CoreWebView2EnvironmentOptions("--disable-features=msEdgeSidebarV2")).WaitAsync(TimeSpan.FromSeconds(25));
+   var env=await CoreWebView2Environment.CreateAsync(null,Path.Combine(root,"webview-ui-4.0"),new CoreWebView2EnvironmentOptions("--disable-features=msEdgeSidebarV2")).WaitAsync(TimeSpan.FromSeconds(25));
    if(attempt!=startupAttempt||closing||IsDisposed)return;
    await view.EnsureCoreWebView2Async(env).WaitAsync(TimeSpan.FromSeconds(25));
    if(attempt!=startupAttempt||closing||IsDisposed)return;
@@ -55,7 +55,7 @@ partial class MainWindow {
     catch(Exception ex){StartupLog.Write("Host message",ex);if(!startupReady)FailStartup(attempt,"The interface reported an initialization error: "+ex.Message);else Post("toast",ex.Message);}
    };
 
-   string uiFolder=Path.Combine(root,"ui-3.3");Directory.CreateDirectory(uiFolder);File.WriteAllText(Path.Combine(uiFolder,"index.html"),Resource("ui.html"),new UTF8Encoding(false));
+   string uiFolder=Path.Combine(root,"ui-4.0");Directory.CreateDirectory(uiFolder);File.WriteAllText(Path.Combine(uiFolder,"index.html"),Resource("ui.html"),new UTF8Encoding(false));
    core.SetVirtualHostNameToFolderMapping("nora-ui.local",uiFolder,CoreWebView2HostResourceAccessKind.DenyCors);
    StartupStage(attempt,"Opening bundled interface");core.Navigate(uiUrl);
   }catch(Exception e){if(attempt!=startupAttempt||closing||IsDisposed)return;StartupLog.Write("WebView initialization",e);FailStartup(attempt,(e is TimeoutException?"WebView2 did not respond in time.":e.Message)+"\nInstall Microsoft Edge WebView2 Runtime if it is missing: https://developer.microsoft.com/microsoft-edge/webview2/");}

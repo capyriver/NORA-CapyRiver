@@ -1,0 +1,24 @@
+{
+  "version": "4.0.1",
+  "target": "win-x64 self-contained portable ZIP",
+  "exe": "NORA.exe",
+  "exeSHA256": "36ce60d78c18fcbe54abba3b62f19047020951919b376da29287cc1287f32fff",
+  "asset": "NORA-CapyRiver-4.0.1-portable.zip",
+  "assetSHA256": "05f4eca7306b82f0db38303991395d1a76f2a522f6af478650553db82704dea5",
+  "sourceSHA256": {
+    "src/ui.html": "4d7f77918e83fc642c27cee062d521c1cad98462b64e118e529861a9fd5f7527",
+    "src/BrowserDock.cs": "c63381d70e4e7ac50fbbc32f85d18f0cb93858663176319f35bce8adbae8b596",
+    "src/BrowserWindow.cs": "77283d08b7499ad0fca1daa33c4cb784e8728d96a57756dbcb449ff2e94e20b4",
+    "src/Program.cs": "c5b2325af33c62baa8e39f277cdeccda574031cb2f99cf7cfa571a6f085fc011",
+    "src/WebViewHost.cs": "d411170667fcd7739f3d3a5bb7ef99a5a7928d76be2cd179009e782e76fdd376",
+    "src/LocalChat.csproj": "e9eddde45900a46959665fe82e122bd3a6a41781460f317f9037325417bad610",
+    "README.md": "f24358f7d998f9c4d59603dc615052cad92b639d202ba355f9e54f589d770c4b",
+    "RELEASE-NOTES-4.0.1.md": "1a1bec22d9b2c3bfb6b94150db59d1c6e0456a0c14f4b61cf69b566cf9754b6e"
+  },
+  "verification": {
+    "dotnetPublish": "succeeded with .NET SDK 8.0.427",
+    "inlineJavaScript": "3 scripts parsed successfully",
+    "staticDomReferences": "all literal element references resolved",
+    "tests": "not run"
+  }
+}
