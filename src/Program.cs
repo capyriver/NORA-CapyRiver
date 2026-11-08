@@ -25,7 +25,7 @@ partial class MainWindow:Form {
  readonly List<ChatSession> chats=new();readonly List<Repository> repos=new();readonly List<AgentProfile> agents=Profiles.BuiltIn();
  Settings settings=new();ChatSession current=new();CancellationTokenSource? generation,importCancel,setupCancel;
  Process? air,server;Task<string>? airErrors,serverErrors;string airKey="",serverKey="";bool busy,importing,closing,settingUp,promptMigrated,experimentalMigrated,fastMigrated;string runtimeBackend="";DateTime lastSave;
- public MainWindow(){Text="NORA 3.18.5 · NORA AI v3";Width=1440;Height=940;MinimumSize=new(1100,760);BackColor=Color.FromArgb(25,25,25);StartPosition=FormStartPosition.CenterScreen;
+ public MainWindow(){Text="NORA 3.18.6 · NORA AI v3";Width=1440;Height=940;MinimumSize=new(1100,760);BackColor=Color.FromArgb(25,25,25);StartPosition=FormStartPosition.CenterScreen;
   try{Icon=Icon.ExtractAssociatedIcon(Environment.ProcessPath!);}catch{}
   InitWindowChrome();Controls.Add(view);InitBrowserDock();LoadData();Shown+=async(_,_)=>await StartView();FormClosing+=OnClosing;
  }
