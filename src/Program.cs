@@ -25,9 +25,9 @@ partial class MainWindow:Form {
  readonly List<ChatSession> chats=new();readonly List<Repository> repos=new();readonly List<AgentProfile> agents=Profiles.BuiltIn();
  Settings settings=new();ChatSession current=new();CancellationTokenSource? generation,importCancel,setupCancel;
  Process? air,server;Task<string>? airErrors,serverErrors;string airKey="",serverKey="";bool busy,importing,closing,settingUp,promptMigrated,experimentalMigrated,fastMigrated;string runtimeBackend="";DateTime lastSave;
- public MainWindow(){Text="NORA 3.18.4 · NORA AI v3";Width=1440;Height=940;MinimumSize=new(1100,760);BackColor=Color.FromArgb(25,25,25);StartPosition=FormStartPosition.CenterScreen;
+ public MainWindow(){Text="NORA 3.18.5 · NORA AI v3";Width=1440;Height=940;MinimumSize=new(1100,760);BackColor=Color.FromArgb(25,25,25);StartPosition=FormStartPosition.CenterScreen;
   try{Icon=Icon.ExtractAssociatedIcon(Environment.ProcessPath!);}catch{}
-  InitWindowChrome();Controls.Add(view);InitBrowserDock();InitStartupPanel();LoadData();Shown+=async(_,_)=>await StartView();FormClosing+=OnClosing;
+  InitWindowChrome();Controls.Add(view);InitBrowserDock();LoadData();Shown+=async(_,_)=>await StartView();FormClosing+=OnClosing;
  }
  string ChatPath(string id)=>Path.Combine(root,"chats",Disk.Id(id)+".json");string RepoPath(string id)=>Path.Combine(root,"repos",Disk.Id(id)+".json");
  void LoadData(){agents.AddRange(BundledAgents.Load());Directory.CreateDirectory(root);Directory.CreateDirectory(Path.Combine(root,"chats"));Directory.CreateDirectory(Path.Combine(root,"repos"));Directory.CreateDirectory(Path.Combine(root,"agents"));
@@ -111,7 +111,7 @@ partial class MainWindow:Form {
    case "artifactCopy":RequireIdle();await RunQuick(new("copy_to_output",artifactId:Str(d,"id")),"Скопировать файл в выбранную папку");break;
    case "captureOutput":RequireIdle();await RunQuick(new("screen_capture"),"Сделай снимок экрана");break;
    case "browserCapture":RequireIdle();await RunQuick(new("browser_capture"),"Сделай снимок страницы браузера");break;
-   case "uiError":if(!startupReady)FailStartup(startupAttempt,"Ошибка страницы интерфейса (строка "+Str(d,"line")+"). Подробности в журнале.");StartupLog.Write("JavaScript",Str(d,"message"));break;
+   case "uiError":StartupLog.Write("JavaScript",Str(d,"message"));if(!startupReady)FailStartup(startupAttempt,"Ошибка выполнения интерфейса (строка "+Str(d,"line")+"). Подробности в журнале.");break;
    case "uiReady":CompleteStartup();break;
    case "resumeTask":{RequireIdle();var pending=AgentTask.Load(AgentTaskPath(current.Id),current.Id);if(pending==null||pending.Status=="complete"||pending.Id!=Str(d,"taskId"))throw new Exception("Эта задача завершена или заменена новой. Продолжение не запущено.");string draft=current.Draft;try{await Send("Продолжи незавершённую задачу");}finally{current.Draft=draft;SaveCurrent();State();}break;}
    case "ready":StartupLog.Write("Bridge ready");State();Post("status","Готово · чаты сохраняются локально");if(promptMigrated)Post("toast","Профиль кода и прямых ответов включён: температура 0,2. Старые чаты, движок и веса сохранены.");break;
