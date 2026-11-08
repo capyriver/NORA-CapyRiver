@@ -4,7 +4,7 @@
 
 **A local-first Windows AI workspace with the original NORA identity and CapyRiver model labels.**
 
-> **Release · v3.18.3.** NORA will continue to receive updates, though releases may be infrequent. The source and build instructions remain available for owners who need to maintain their own copy.
+> **Release · v3.18.4.** NORA will continue to receive updates, though releases may be infrequent. The source and build instructions remain available for owners who need to maintain their own copy.
 
 [English](#english) · [Русский](#русский) · [简体中文](#简体中文)
 
@@ -44,7 +44,7 @@ The model may identify its underlying family, produce incorrect answers, or fail
 
 ### Windows setup
 
-1. Download **`NORA-CapyRiver-3.18.3-portable.zip`** from the GitHub release and extract the entire folder.
+1. Download **`NORA-CapyRiver-3.18.4-portable.zip`** from the GitHub release and extract the entire folder.
 2. Start `NORA.exe`. Keep the adjacent runtime files in the extracted folder.
 3. Open **Models** and connect a model. Initial setup downloads the selected weights and checks their integrity; allow enough disk space and time.
 4. For the 4B CUDA path, use a compatible NVIDIA GPU and the supported CUDA runtime. Model speed and memory needs vary by hardware.
@@ -95,7 +95,7 @@ NORA — настольное рабочее пространство для Win
 
 ### Установка в Windows
 
-1. Скачай из релиза GitHub архив **`NORA-CapyRiver-3.18.3-portable.zip`** и распакуй всю папку.
+1. Скачай из релиза GitHub архив **`NORA-CapyRiver-3.18.4-portable.zip`** и распакуй всю папку.
 2. Запусти `NORA.exe`. Не перемещай runtime-файлы отдельно от приложения.
 3. Открой **Модели** и подключи модель. При первой установке выбранные веса загружаются и проверяются; потребуется свободное место и время.
 4. Для 4B с CUDA нужна совместимая видеокарта NVIDIA и поддерживаемое CUDA-окружение. Скорость и расход памяти зависят от компьютера.
@@ -146,7 +146,7 @@ NORA 是一款面向 Windows 的本地优先 AI 工作空间，支持本地语�
 
 ### Windows 安装
 
-1. 从 GitHub Release 下载 **`NORA-CapyRiver-3.18.3-portable.zip`** 并完整解压。
+1. 从 GitHub Release 下载 **`NORA-CapyRiver-3.18.4-portable.zip`** 并完整解压。
 2. 运行 `NORA.exe`，请将旁边的运行时文件保留在应用文件夹中。
 3. 打开 **Models** 并连接模型。首次安装时会下载所选权重并校验完整性；请预留磁盘空间和下载时间。
 4. 4B CUDA 路径需要兼容的 NVIDIA 显卡和受支持的 CUDA 环境。速度和显存需求因硬件而异。
